@@ -1,7 +1,7 @@
 # .vscode
 /obj/*
-*.map
-*.sym
-*.ihx
-*.noi
-*.cdb
+# *.map
+# *.sym
+# *.ihx
+# *.noi
+# *.cdb
