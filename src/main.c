@@ -99,8 +99,8 @@
 #define TAC_REG_START_256 0x07 		// start timer, TIMA_REG increments every 256 cycles	- TACF_262KHZ 0b00000001
 #define TAC_REG_START_64 0x06 		// start timer, TIMA_REG increments every 64 cycles 	- TACF_65KHZ  0b00000010
 
-#define TMA_REG_REALTIME_DMG 0x5C 	// 0x5C=92
-#define TMA_REG_REALTIME_GBC 0xAE 	// 0xAE=174
+#define TMA_REG_STOPWATCH_DMG 0x5C	// 0x5C=92
+#define TMA_REG_STOPWATCH_GBC 0xAE	// 0xAE=174
 
 //* ------------------------------------------------------------------------------------------- *//
 //* --------------------------------------  GAME MACROS  -------------------------------------- *//
@@ -138,7 +138,7 @@ volatile uint8_t minutes; // NOTE: volatile tells compiler this can change in is
 volatile uint8_t seconds;
 volatile uint8_t hundredths;
 
-unsigned char num_buffer_minutes[BUFFER_NUM_16_BIT];
+unsigned char num_buffer_minutes[BUFFER_NUM_16_BIT]; // convert uint8_t to buffer, to print to screen
 unsigned char num_buffer_seconds[BUFFER_NUM_16_BIT];
 unsigned char num_buffer_hundredths[BUFFER_NUM_16_BIT];
 
@@ -229,15 +229,15 @@ void init_system(void) {
 //* --------------------------------------  INTERRUPTS  --------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
 
-void set_timer_realtime_reg(void) {
+void set_timer_reg_stopwatch(void) {
 
 	CRITICAL {
 		if (!is_cpu_fast) {
-			TMA_REG = TMA_REG_REALTIME_DMG;
-			TIMA_REG = TMA_REG_REALTIME_DMG;
+			TMA_REG = TMA_REG_STOPWATCH_DMG;
+			TIMA_REG = TMA_REG_STOPWATCH_DMG;
 		} else {
-			TMA_REG = TMA_REG_REALTIME_GBC;
-			TIMA_REG = TMA_REG_REALTIME_GBC;
+			TMA_REG = TMA_REG_STOPWATCH_GBC;
+			TIMA_REG = TMA_REG_STOPWATCH_GBC;
 		}
 	}
 
@@ -245,7 +245,7 @@ void set_timer_realtime_reg(void) {
 
 void stopwatch_timer_isr(void) {
 
-	if (stopwatch) {
+	if (stopwatch) { // saftey, dont really need this check
 		hundredths++;
 		if (hundredths >= 100) {
 			hundredths = 0;
@@ -346,7 +346,7 @@ void pause_stopwatch(void) {
 	// NOTE: dont reset TIMA_REG, pick up where it left off
 
 	CRITICAL {
-		TAC_REG = TAC_REG_STOP;
+		TAC_REG = TAC_REG_STOP; // stop timer
 		stopwatch = FALSE;
 	}
 
@@ -363,7 +363,7 @@ void pause_stopwatch(void) {
 void start_stopwatch(void) {
 
 	CRITICAL {
-		TAC_REG = is_cpu_fast ? TAC_REG_START_1024 : TAC_REG_START_256;
+		TAC_REG = is_cpu_fast ? TAC_REG_START_1024 : TAC_REG_START_256; // start timer
 		stopwatch = TRUE;
 	}
 
@@ -437,7 +437,7 @@ void init_game(void) {
 	font_init();
 	font = font_load(font_spect);
 
-	set_timer_realtime_reg(); // set counter and modulo registers
+	set_timer_reg_stopwatch(); // set counter and modulo registers
 	set_timer_isr_stopwatch(); // set isr
 
 	init_scene(); // header and controls text
