@@ -32,10 +32,6 @@
 	possible values for TAC_REG are:
 	_____________________________________________________________________________________
 	TAC_REG Value	Bit 2	Bit 1	Bit 0	Clock Source		Frequency (approx.)
-	0x00			0		0		0		Timer stopped		-
-	0x01			0		0		1		Timer stopped		-
-	0x02			0		1		0		Timer stopped		-
-	0x03			0		1		1		Timer stopped		-
 	0x04			1		0		0		CPU Clock / 1024	~4.096 kHz		=> 4.096ms
 	0x05			1		0		1		CPU Clock / 16		~262.144 kHz 	=> 0.004ms
 	0x06			1		1		0		CPU Clock / 64		~65.536 kHz 	=> 0.016ms
@@ -54,14 +50,6 @@
 //* ------------------------------------------------------------------------------------------- *//
 //* -------------------------------------  COMMON MACROS  ------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
-
-//+ ------------------------------  GENERAL  ------------------------------ +//
-
-//+ --  BUFFERS  -- +//
-
-#define UITOA_DECIMAL 10 // convert number to decimal
-
-#define BUFFER_NUM_16_BIT (5 + 1) // 5 digits + null-terminator
 
 //+ ------------------------------  SYSTEM  ------------------------------- +//
 
@@ -92,23 +80,13 @@
 #define VOLUME_MIN \
     NR50_REG = 0x00;
 
-//+ --  INTERRUPTS  -- +//
-
-#define TAC_REG_STOP 0x00			// stop timer											- TACF_STOP   0b00000000
-#define TAC_REG_START_1024 0x04 	// start timer, TIMA_REG increments every 1024 cycles	- TACF_4KHZ   0b00000000
-#define TAC_REG_START_256 0x07 		// start timer, TIMA_REG increments every 256 cycles	- TACF_262KHZ 0b00000001
-#define TAC_REG_START_64 0x06 		// start timer, TIMA_REG increments every 64 cycles 	- TACF_65KHZ  0b00000010
-
-#define TMA_REG_STOPWATCH_DMG 0x5C	// 0x5C=92
-#define TMA_REG_STOPWATCH_GBC 0xAE	// 0xAE=174
-
 //* ------------------------------------------------------------------------------------------- *//
 //* --------------------------------------  GAME MACROS  -------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
 
 //+ -----------------------------  TEXT-LUT  ------------------------------ +//
 
-#define TEXT_LUT_ASCII_BASE_IDX 0 // 0x00
+#define NUMBERS_BASE_TILE_IDX 16 // value of "0"
 
 //* ------------------------------------------------------------------------------------------- *//
 //* --------------------------------------  DEFINITIONS  -------------------------------------- *//
@@ -123,24 +101,15 @@ bool is_cpu_fast;
 
 font_t font;
 
-//+ ---------------------------  TEXT-BUFFERS  ---------------------------- +//
-
-uint8_t text_LUT_ascii_base_idx; // base-tile for ascii characters
-
-uint8_t num_zeros; // number of leading zeros
-
 //+ -----------------------------  STOPWATCH  ----------------------------- +//
 
 bool stopwatch;
 bool play_tick_sfx;
 
-volatile uint8_t minutes; // NOTE: volatile tells compiler this can change in isr, dont do optimizations on it
-volatile uint8_t seconds;
-volatile uint8_t hundredths;
-
-unsigned char num_buffer_minutes[BUFFER_NUM_16_BIT]; // convert uint8_t to buffer, to print to screen
-unsigned char num_buffer_seconds[BUFFER_NUM_16_BIT];
-unsigned char num_buffer_hundredths[BUFFER_NUM_16_BIT];
+// NOTE: volatile tells compiler this can change in isr, dont do optimizations on it
+volatile uint8_t minutes; // Pointer to text LUT
+volatile uint8_t seconds; // BCD
+volatile uint8_t hundredths; // BCD
 
 //* ------------------------------------------------------------------------------------------- *//
 //* ----------------------------------------  ASSETS  ----------------------------------------- *//
@@ -148,6 +117,50 @@ unsigned char num_buffer_hundredths[BUFFER_NUM_16_BIT];
 
 const unsigned char white_tile[] = {
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+};
+
+// Generated in RGBASM using:
+/*
+  DEF MIL = 0
+  REPT 128
+  REDEF CB EQUS STRSUB("{f:MIL}", 3, 2)
+  db "{CB}"
+  DEF MIL += 1.0/128
+  ENDR
+*/
+const char MilTable128[128][3] = {
+	"00", "00", "01", "02",
+	"03", "03", "04", "05",
+	"06", "07", "07", "08",
+	"09", "10", "10", "11",
+	"12", "13", "14", "14",
+	"15", "16", "17", "17",
+	"18", "19", "20", "21",
+	"21", "22", "23", "24",
+	"25", "25", "26", "27",
+	"28", "28", "29", "30",
+	"31", "32", "32", "33",
+	"34", "35", "35", "36",
+	"37", "38", "39", "39",
+	"40", "41", "42", "42",
+	"43", "44", "45", "46",
+	"46", "47", "48", "49",
+	"50", "50", "51", "52",
+	"53", "53", "54", "55",
+	"56", "57", "57", "58",
+	"59", "60", "60", "61",
+	"62", "63", "64", "64",
+	"65", "66", "67", "67",
+	"68", "69", "70", "71",
+	"71", "72", "73", "74",
+	"75", "75", "76", "77",
+	"78", "78", "79", "80",
+	"81", "82", "82", "83",
+	"84", "85", "85", "86",
+	"87", "88", "89", "89",
+	"90", "91", "92", "92",
+	"93", "94", "95", "96",
+	"96", "97", "98", "99"
 };
 
 //* ------------------------------------------------------------------------------------------- *//
@@ -215,7 +228,6 @@ void init_system(void) {
 	init_bkg(0); // reset bkg_map with tile-0
 
 	set_interrupts(VBL_IFLAG | LCD_IFLAG | SIO_IFLAG | TIM_IFLAG);
-	enable_interrupts(); // IE_REG
 
 	SHOW_BKG;
 	SHOW_SPRITES;
@@ -232,12 +244,12 @@ void init_system(void) {
 void set_timer_reg_stopwatch(void) {
 
 	CRITICAL {
+		// Divide 4096hz clock by 32 (4096/32 = 128hz)
 		if (!is_cpu_fast) {
-			TMA_REG = TMA_REG_STOPWATCH_DMG;
-			TIMA_REG = TMA_REG_STOPWATCH_DMG;
+			TMA_REG = (uint8_t)(0x100 - 32);
 		} else {
-			TMA_REG = TMA_REG_STOPWATCH_GBC;
-			TIMA_REG = TMA_REG_STOPWATCH_GBC;
+			// ...Or by 64 if on GBC
+			TMA_REG = (uint8_t)(0x100 - 64);
 		}
 	}
 
@@ -245,15 +257,36 @@ void set_timer_reg_stopwatch(void) {
 
 void stopwatch_timer_isr(void) {
 
-	if (stopwatch) { // saftey, dont really need this check
-		hundredths++;
-		if (hundredths >= 100) {
-			hundredths = 0;
-			seconds++;
+	if (stopwatch) {
+		hundredths = (hundredths + 1) & 0x7F;
+		// If we overflowed
+		if (hundredths == 0) {
+			// GBDK *does* have BCD support, but it's 32bit, *way* overkill, 
+			// so instead I'll just do it in assembly and try to explain...
+			__asm
+				// ; First, we load the value of seconds from its memory address to register A
+				ld a, (#_seconds)
+
+				// ; Now we add 1 to A
+				add #0x01 
+
+				// ; Next, we use the DAA instruction, which based on the CPU flags left by 
+				// ; the previous instruction, corrects the value of A to be a valid BCD value, so for example:
+				// ; 0x00 + 0x01 = 0x01 -> 0x01
+				// ; 0x09 + 0x01 = 0x0A -> 0x10
+				// ; 0x99 + 0x01 = 0x9A -> 0x00
+				daa
+
+				// ; Finally, we write the value of A back to the memory address of seconds
+				ld (#_seconds), a
+			__endasm;
+
 			play_tick_sfx = TRUE;
-			if (seconds >= 60) {
-				seconds = 0;
-				minutes++;
+
+			if (seconds >= 0x60) {
+				seconds = 0x00;
+				// Need to add 1 to minutes, use same snippet as above but not explained
+				__asm__("ld a, (#_minutes)\n add #0x01\n daa\n ld (#_minutes), a");
 			}
 		}
 	}
@@ -287,8 +320,8 @@ void init_scene(void) {
 	gotoxy(1, 2);
 	printf("------------------");
 
-	gotoxy(6, 6);
-	printf("00:00:00");
+    gotoxy(6, 6);
+    printf("00:00:00");
 
 	gotoxy(1, 14);
 	printf("------------------");
@@ -300,29 +333,6 @@ void init_scene(void) {
 }
 
 //* ------------------------------------------------------------------------------------------- *//
-//* -----------------------------------------  UTILS  ----------------------------------------- *//
-//* ------------------------------------------------------------------------------------------- *//
-
-inline void draw_numbers_ascii(uint8_t x, uint8_t y, const unsigned char *buffer) {
-
-	uint8_t i = 0;
-	uint8_t *vramAddr = get_bkg_xy_addr(x, y); // VRAM address of first character
-
-	for (uint8_t j = 0; j < num_zeros; j++) {
-		set_vram_byte(vramAddr++, text_LUT_ascii_base_idx + 16);
-	}
-
-	while (buffer[i] != '\0') {
-		if (buffer[i] >= '0' && buffer[i] <= '9') {
-			uint8_t tileidx = text_LUT_ascii_base_idx + buffer[i] - ' ';
-			set_vram_byte(vramAddr++, tileidx);
-		}
-		i++;
-	}
-
-}
-
-//* ------------------------------------------------------------------------------------------- *//
 //* ---------------------------------------  ROUTINES  ---------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
 
@@ -330,14 +340,14 @@ void reset_stopwatch(void) {
 
 	sfx_4();
 
-	stopwatch = FALSE;
+	stopwatch = FALSE; // saftey
 
 	minutes = 0;
 	seconds = 0;
 	hundredths = 0;
 
-	gotoxy(6, 6);
-	printf("00:00:00");
+    gotoxy(6, 6);
+    printf("00:00:00");
 
 }
 
@@ -346,7 +356,7 @@ void pause_stopwatch(void) {
 	// NOTE: dont reset TIMA_REG, pick up where it left off
 
 	CRITICAL {
-		TAC_REG = TAC_REG_STOP; // stop timer
+		TAC_REG = TACF_STOP; // stop timer
 		stopwatch = FALSE;
 	}
 
@@ -363,7 +373,7 @@ void pause_stopwatch(void) {
 void start_stopwatch(void) {
 
 	CRITICAL {
-		TAC_REG = is_cpu_fast ? TAC_REG_START_1024 : TAC_REG_START_256; // start timer
+		TAC_REG = TACF_4KHZ | TACF_START; // start timer
 		stopwatch = TRUE;
 	}
 
@@ -396,21 +406,19 @@ void handle_inputs(void) {
 
 inline void print_stopwatch(void) {
 
-	// NOTE: draw every frame, to account for max cycles it will take anyway
+	// First, draw miliseconds
+    set_vram_byte(get_bkg_xy_addr(12, 6), MilTable128[hundredths][0] - '0' + NUMBERS_BASE_TILE_IDX);
+    set_vram_byte(get_bkg_xy_addr(13, 6), MilTable128[hundredths][1] - '0' + NUMBERS_BASE_TILE_IDX);
 
-	num_zeros = (minutes > 9) ? 0 : 1;
-	uitoa(minutes, num_buffer_minutes, UITOA_DECIMAL); // minutes
-	draw_numbers_ascii(6, 6, num_buffer_minutes);
+	// BCD2Text is... weird, so we'll do it ourselves, cheaper than casting probs
 
-	num_zeros = (seconds > 9) ? 0 : 1;
-	uitoa(seconds, num_buffer_seconds, UITOA_DECIMAL); // seconds
-	draw_numbers_ascii(9, 6, num_buffer_seconds);
+	// Now seconds
+	set_vram_byte(get_bkg_xy_addr(9, 6), ((seconds >> 4) & 0x0F) + NUMBERS_BASE_TILE_IDX);
+	set_vram_byte(get_bkg_xy_addr(10, 6), (seconds & 0x0F) + NUMBERS_BASE_TILE_IDX);
 
-	num_zeros = (hundredths > 9) ? 0 : 1;
-	uitoa(hundredths, num_buffer_hundredths, UITOA_DECIMAL); // hundredths
-	draw_numbers_ascii(12, 6, num_buffer_hundredths);
-
-	set_bkg_tile_xy(14, 6, 0); // HACK: saftey, hundredths happens so fast, leading zeros can't keep up and it will sometimes draw 3 digits
+	// and minutes
+	set_vram_byte(get_bkg_xy_addr(6, 6), ((minutes >> 4) & 0x0F) + NUMBERS_BASE_TILE_IDX);
+	set_vram_byte(get_bkg_xy_addr(7, 6), (minutes & 0x0F) + NUMBERS_BASE_TILE_IDX);
 
 }
 
