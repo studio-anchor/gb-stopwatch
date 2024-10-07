@@ -199,20 +199,6 @@ void set_cpu(void) {
 
 }
 
-void set_timer_realtime_reg(void) {
-
-	CRITICAL {
-		if (!is_cpu_fast) {
-			TMA_REG = TMA_REG_REALTIME_DMG;
-			TIMA_REG = TMA_REG_REALTIME_DMG;
-		} else {
-			TMA_REG = TMA_REG_REALTIME_GBC;
-			TIMA_REG = TMA_REG_REALTIME_GBC;
-		}
-	}
-
-}
-
 void clear_sprite_tiles(void) {
 
 	for (uint8_t i = 0; i < 127; i++) {
@@ -242,6 +228,20 @@ void init_system(void) {
 //* ------------------------------------------------------------------------------------------- *//
 //* --------------------------------------  INTERRUPTS  --------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
+
+void set_timer_realtime_reg(void) {
+
+	CRITICAL {
+		if (!is_cpu_fast) {
+			TMA_REG = TMA_REG_REALTIME_DMG;
+			TIMA_REG = TMA_REG_REALTIME_DMG;
+		} else {
+			TMA_REG = TMA_REG_REALTIME_GBC;
+			TIMA_REG = TMA_REG_REALTIME_GBC;
+		}
+	}
+
+}
 
 void stopwatch_timer_isr(void) {
 
