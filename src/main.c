@@ -28,21 +28,14 @@
 	It DIVIDES the CPU clock by a certain factor, determining the frequency at which TIMA_REG increments.
 	When TIMA_REG overflows, an interrupt is requested.
 	When the timer is stopped, TIMA_REG does not increment.
-        
+
 	possible values for TAC_REG are:
 	_____________________________________________________________________________________
-	TAC_REG Value	Bit 2	Bit 1	Bit 0	Clock Source		Frequency (approx.)
-	0x04			1		0		0		CPU Clock / 1024	~4.096 kHz		=> 4.096ms
-	0x05			1		0		1		CPU Clock / 16		~262.144 kHz 	=> 0.004ms
-	0x06			1		1		0		CPU Clock / 64		~65.536 kHz 	=> 0.016ms
-	0x07			1		1		1		CPU Clock / 256		~16.384 kHz 	=> 0.064ms
-	_____________________________________________________________________________________
-	_____________________________________________________________________________________
-	TAC_REG Value	Clock Source		Frequency (approx.)		Increments per second		Increments per frame (60 FPS)
-	0x04			CPU Clock / 1024	~4.096 kHz				4,096						~68.27
-	0x05			CPU Clock / 16		~262.144 kHz			262,144						~4,369.07
-	0x06			CPU Clock / 64		~65.536 kHz				65,536						~1,092.27
-	0x07			CPU Clock / 256		~16.384 kHz				16,384						~273.07
+	TAC_REG Value	Bit 2	Bit 1	Bit 0	Clock Source		Frequency (approx.)	Increments per second	Increments per frame (60 FPS)
+	0x04			1		0		0		CPU Clock / 1024	~4.096 kHz			4,096					~68.27
+	0x05			1		0		1		CPU Clock / 16		~256 kHz			262,144					~4,369.07
+	0x06			1		1		0		CPU Clock / 64		~64 kHz				65,536					~1,092.27
+	0x07			1		1		1		CPU Clock / 256		~16 kHz				16,384					~273.07
 	_____________________________________________________________________________________
 
 ---------------------------------------------------------------------------~ */
@@ -81,14 +74,6 @@
     NR50_REG = 0x00;
 
 //* ------------------------------------------------------------------------------------------- *//
-//* --------------------------------------  GAME MACROS  -------------------------------------- *//
-//* ------------------------------------------------------------------------------------------- *//
-
-//+ -----------------------------  TEXT-LUT  ------------------------------ +//
-
-#define NUMBERS_BASE_TILE_IDX 16 // value of "0"
-
-//* ------------------------------------------------------------------------------------------- *//
 //* --------------------------------------  DEFINITIONS  -------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
 
@@ -101,10 +86,14 @@ bool is_cpu_fast;
 
 font_t font;
 
+//+ -------------------------------  VRAM  -------------------------------- +//
+
+uint8_t numbers_base_tile_idx = 16; // tile-index of "0" in VRAM tile-data
+
 //+ -----------------------------  STOPWATCH  ----------------------------- +//
 
 bool stopwatch;
-bool play_tick_sfx;
+bool play_stopwatch_tick_sfx;
 
 // NOTE: volatile tells compiler this can change in isr, dont do optimizations on it
 volatile uint8_t minutes; // Pointer to text LUT
@@ -244,12 +233,10 @@ void init_system(void) {
 void set_timer_reg_stopwatch(void) {
 
 	CRITICAL {
-		// Divide 4096hz clock by 32 (4096/32 = 128hz)
 		if (!is_cpu_fast) {
-			TMA_REG = (uint8_t)(0x100 - 32);
+			TMA_REG = (uint8_t)(0x100 - 32); // DMG: divide 4096hz clock by 32 (4096/32 = 128hz)
 		} else {
-			// ...Or by 64 if on GBC
-			TMA_REG = (uint8_t)(0x100 - 64);
+			TMA_REG = (uint8_t)(0x100 - 64); // GBC: divide 4096hz clock by 64 (4096/64 = 64hz)
 		}
 	}
 
@@ -281,7 +268,7 @@ void stopwatch_timer_isr(void) {
 				ld (#_seconds), a
 			__endasm;
 
-			play_tick_sfx = TRUE;
+			play_stopwatch_tick_sfx = TRUE;
 
 			if (seconds >= 0x60) {
 				seconds = 0x00;
@@ -320,8 +307,8 @@ void init_scene(void) {
 	gotoxy(1, 2);
 	printf("------------------");
 
-    gotoxy(6, 6);
-    printf("00:00:00");
+	gotoxy(6, 6);
+	printf("00:00:00");
 
 	gotoxy(1, 14);
 	printf("------------------");
@@ -340,14 +327,14 @@ void reset_stopwatch(void) {
 
 	sfx_4();
 
-	stopwatch = FALSE; // saftey
+	stopwatch = FALSE; // saftey, should already be false
 
 	minutes = 0;
 	seconds = 0;
 	hundredths = 0;
 
-    gotoxy(6, 6);
-    printf("00:00:00");
+	gotoxy(6, 6);
+	printf("00:00:00");
 
 }
 
@@ -392,11 +379,11 @@ void handle_inputs(void) {
 	static uint8_t prev_joypad = NULL;
 	uint8_t current_joypad = joypad();
 
-	if ((joypad() & J_A) && !(prev_joypad & J_A)) {
+	if ((current_joypad & J_A) && !(prev_joypad & J_A)) {
 		if (stopwatch) pause_stopwatch();
 		else start_stopwatch();
 	}
-	if ((joypad() & J_B) && !(prev_joypad & J_B) && !stopwatch) {
+	if ((current_joypad & J_B) && !(prev_joypad & J_B) && !stopwatch) {
 		reset_stopwatch();
 	}
 
@@ -406,19 +393,18 @@ void handle_inputs(void) {
 
 inline void print_stopwatch(void) {
 
-	// First, draw miliseconds
-    set_vram_byte(get_bkg_xy_addr(12, 6), MilTable128[hundredths][0] - '0' + NUMBERS_BASE_TILE_IDX);
-    set_vram_byte(get_bkg_xy_addr(13, 6), MilTable128[hundredths][1] - '0' + NUMBERS_BASE_TILE_IDX);
-
 	// BCD2Text is... weird, so we'll do it ourselves, cheaper than casting probs
 
-	// Now seconds
-	set_vram_byte(get_bkg_xy_addr(9, 6), ((seconds >> 4) & 0x0F) + NUMBERS_BASE_TILE_IDX);
-	set_vram_byte(get_bkg_xy_addr(10, 6), (seconds & 0x0F) + NUMBERS_BASE_TILE_IDX);
+	uint8_t *starting_bkg_xy_addr = get_bkg_xy_addr(6, 6);
 
-	// and minutes
-	set_vram_byte(get_bkg_xy_addr(6, 6), ((minutes >> 4) & 0x0F) + NUMBERS_BASE_TILE_IDX);
-	set_vram_byte(get_bkg_xy_addr(7, 6), (minutes & 0x0F) + NUMBERS_BASE_TILE_IDX);
+	set_vram_byte((starting_bkg_xy_addr), ((minutes >> 4) & 0x0F) + numbers_base_tile_idx); // minutes
+	set_vram_byte((starting_bkg_xy_addr + 1), (minutes & 0x0F) + numbers_base_tile_idx);
+
+	set_vram_byte((starting_bkg_xy_addr + 3), ((seconds >> 4) & 0x0F) + numbers_base_tile_idx); // seconds
+	set_vram_byte((starting_bkg_xy_addr + 4), (seconds & 0x0F) + numbers_base_tile_idx);
+
+	set_vram_byte((starting_bkg_xy_addr + 6), MilTable128[hundredths][0] - '0' + numbers_base_tile_idx); // miliseconds
+	set_vram_byte((starting_bkg_xy_addr + 7), MilTable128[hundredths][1] - '0' + numbers_base_tile_idx);
 
 }
 
@@ -427,10 +413,10 @@ void handle_stopwatch(void) {
 	if (stopwatch) {
 		print_stopwatch();
 
-		if (play_tick_sfx) {
+		if (play_stopwatch_tick_sfx) {
 			VOLUME_LOW;
 			sfx_2();
-			play_tick_sfx = FALSE;
+			play_stopwatch_tick_sfx = FALSE;
 		}
 	}
 
