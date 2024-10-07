@@ -36,7 +36,7 @@
 	0x01			0		0		1		Timer stopped		-
 	0x02			0		1		0		Timer stopped		-
 	0x03			0		1		1		Timer stopped		-
-	0x04			1		0		0		CPU Clock / 1024	~4.096 kHz 		=> 4.096ms
+	0x04			1		0		0		CPU Clock / 1024	~4.096 kHz		=> 4.096ms
 	0x05			1		0		1		CPU Clock / 16		~262.144 kHz 	=> 0.004ms
 	0x06			1		1		0		CPU Clock / 64		~65.536 kHz 	=> 0.016ms
 	0x07			1		1		1		CPU Clock / 256		~16.384 kHz 	=> 0.064ms
@@ -60,14 +60,8 @@
 //+ --  BUFFERS  -- +//
 
 #define UITOA_DECIMAL 10 // convert number to decimal
-#define UITOA_HEX 16 // convert number to hexadecimal
 
-#define BUFFER_NUM_8_BIT (3 + 1) // 3 digits + null-terminator
 #define BUFFER_NUM_16_BIT (5 + 1) // 5 digits + null-terminator
-#define BUFFER_STRING (32 + 1) // 32 chars + null-terminator
-
-#define NUM_LENGTH_5 5
-#define NUM_LENGTH_3 3
 
 //+ ------------------------------  SYSTEM  ------------------------------- +//
 
@@ -100,12 +94,12 @@
 
 //+ --  INTERRUPTS  -- +//
 
-#define TAC_REG_STOP 0x00 			// stop timer 											- TACF_STOP   0b00000000
+#define TAC_REG_STOP 0x00			// stop timer											- TACF_STOP   0b00000000
 #define TAC_REG_START_1024 0x04 	// start timer, TIMA_REG increments every 1024 cycles	- TACF_4KHZ   0b00000000
 #define TAC_REG_START_256 0x07 		// start timer, TIMA_REG increments every 256 cycles	- TACF_262KHZ 0b00000001
 #define TAC_REG_START_64 0x06 		// start timer, TIMA_REG increments every 64 cycles 	- TACF_65KHZ  0b00000010
 
-#define TMA_REG_REALTIME_DMG 0x5C 	// 0x5C=92, gpt: 0x9C=156
+#define TMA_REG_REALTIME_DMG 0x5C 	// 0x5C=92
 #define TMA_REG_REALTIME_GBC 0xAE 	// 0xAE=174
 
 //* ------------------------------------------------------------------------------------------- *//
@@ -131,10 +125,9 @@ font_t font;
 
 //+ ---------------------------  TEXT-BUFFERS  ---------------------------- +//
 
-uint8_t text_LUT_ascii_base_idx;
+uint8_t text_LUT_ascii_base_idx; // base-tile for ascii characters
 
-unsigned char num_buffer[BUFFER_NUM_16_BIT]; // NOTE: each thing probably needs its own
-uint8_t num_zeros;
+uint8_t num_zeros; // number of leading zeros
 
 //+ -----------------------------  STOPWATCH  ----------------------------- +//
 
@@ -294,8 +287,8 @@ void init_scene(void) {
 	gotoxy(1, 2);
 	printf("------------------");
 
-    gotoxy(6, 6);
-    printf("00:00:00");
+	gotoxy(6, 6);
+	printf("00:00:00");
 
 	gotoxy(1, 14);
 	printf("------------------");
@@ -310,7 +303,7 @@ void init_scene(void) {
 //* -----------------------------------------  UTILS  ----------------------------------------- *//
 //* ------------------------------------------------------------------------------------------- *//
 
-inline void draw_numbers_ascii(uint8_t x, uint8_t y, const unsigned char *buffer) { // NOTE: more performant than draw_buffer_ascii()
+inline void draw_numbers_ascii(uint8_t x, uint8_t y, const unsigned char *buffer) {
 
 	uint8_t i = 0;
 	uint8_t *vramAddr = get_bkg_xy_addr(x, y); // VRAM address of first character
@@ -343,8 +336,8 @@ void reset_stopwatch(void) {
 	seconds = 0;
 	hundredths = 0;
 
-    gotoxy(6, 6);
-    printf("00:00:00");
+	gotoxy(6, 6);
+	printf("00:00:00");
 
 }
 
@@ -405,19 +398,19 @@ inline void print_stopwatch(void) {
 
 	// NOTE: draw every frame, to account for max cycles it will take anyway
 
-	uitoa(minutes, num_buffer_minutes, UITOA_DECIMAL); // minutes
 	num_zeros = (minutes > 9) ? 0 : 1;
+	uitoa(minutes, num_buffer_minutes, UITOA_DECIMAL); // minutes
 	draw_numbers_ascii(6, 6, num_buffer_minutes);
 
-	uitoa(seconds, num_buffer_seconds, UITOA_DECIMAL); // seconds
 	num_zeros = (seconds > 9) ? 0 : 1;
+	uitoa(seconds, num_buffer_seconds, UITOA_DECIMAL); // seconds
 	draw_numbers_ascii(9, 6, num_buffer_seconds);
 
-	uitoa(hundredths, num_buffer_hundredths, UITOA_DECIMAL); // hundredths
 	num_zeros = (hundredths > 9) ? 0 : 1;
+	uitoa(hundredths, num_buffer_hundredths, UITOA_DECIMAL); // hundredths
 	draw_numbers_ascii(12, 6, num_buffer_hundredths);
 
-	set_bkg_tile_xy(14, 6, 0); // HACK: saftey, hundredths happens so fast, leading zeros can't keep up and it will draw 3 digits
+	set_bkg_tile_xy(14, 6, 0); // HACK: saftey, hundredths happens so fast, leading zeros can't keep up and it will sometimes draw 3 digits
 
 }
 

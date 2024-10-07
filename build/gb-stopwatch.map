@@ -84,19 +84,19 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000008  l__HEADER_TIM0                  
      00000011  l__GSINIT                       
      00000030  l__HEADER7                      
-     0000005D  l__DATA                         
+     00000057  l__DATA                         
      00000060  l__HEADER4                      
      000000AB  l__HEADER11                     
      00000200  s__CODE                         
-     00000918  l__CODE                         
-     00000B18  s__HOME                         
+     00000914  l__CODE                         
+     00000B14  s__HOME                         
      00000C1E  l__HOME                         
-     00001736  s__BASE                         
-     00001736  s__CODE_0                       
-     00001736  s__INITIALIZER                  
-     00001736  s__LIT                          
-     0000173B  s__GSINIT                       
-     0000174C  s__GSFINAL                      
+     00001732  s__BASE                         
+     00001732  s__CODE_0                       
+     00001732  s__INITIALIZER                  
+     00001732  s__LIT                          
+     00001737  s__GSINIT                       
+     00001748  s__GSFINAL                      
      00002000  _rROMB0                            
      00003000  _rROMB1                            
      00004000  _rRAMB                             
@@ -110,10 +110,10 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000C000  __RAM                              
      0000C000  _shadow_OAM                     
      0000C0A0  s__DATA                         
-     0000C0FD  s__BSS                          
-     0000C0FD  s__INITIALIZED                  
-     0000C102  s__HEAP                         
-     0000C102  s__HEAP_END                     
+     0000C0F7  s__BSS                          
+     0000C0F7  s__INITIALIZED                  
+     0000C0FC  s__HEAP                         
+     0000C0FC  s__HEAP_END                     
      0000D000  __RAMBANK                          
      0000E000  .STACK                          
      0000FE00  __OAMRAM                           
@@ -204,927 +204,923 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000200  A$lcc105680$156                    main
-     00000200  C$main.c$164$0_0$168               main
-     00000200  C$main.c$166$1_0$168               main
+     00000200  A$lcc32320$152                     main
+     00000200  C$main.c$157$0_0$168               main
+     00000200  C$main.c$159$1_0$168               main
      00000200  G$sfx_1$0$0                        main
      00000200  _sfx_1                             main
-     00000202  A$lcc105680$157                    main
-     00000204  A$lcc105680$161                    main
-     00000204  C$main.c$167$1_0$168               main
-     00000206  A$lcc105680$162                    main
-     00000208  A$lcc105680$166                    main
-     00000208  C$main.c$168$1_0$168               main
-     0000020A  A$lcc105680$167                    main
-     0000020C  A$lcc105680$171                    main
-     0000020C  C$main.c$169$1_0$168               main
-     0000020E  A$lcc105680$172                    main
-     00000210  A$lcc105680$176                    main
-     00000210  C$main.c$170$1_0$168               main
-     00000212  A$lcc105680$177                    main
-     00000214  A$lcc105680$185                    main
-     00000214  C$main.c$171$1_0$168               main
+     00000202  A$lcc32320$153                     main
+     00000204  A$lcc32320$157                     main
+     00000204  C$main.c$160$1_0$168               main
+     00000206  A$lcc32320$158                     main
+     00000208  A$lcc32320$162                     main
+     00000208  C$main.c$161$1_0$168               main
+     0000020A  A$lcc32320$163                     main
+     0000020C  A$lcc32320$167                     main
+     0000020C  C$main.c$162$1_0$168               main
+     0000020E  A$lcc32320$168                     main
+     00000210  A$lcc32320$172                     main
+     00000210  C$main.c$163$1_0$168               main
+     00000212  A$lcc32320$173                     main
+     00000214  A$lcc32320$181                     main
+     00000214  C$main.c$164$1_0$168               main
      00000214  XG$sfx_1$0$0                       main
      00000215  G$white_tile$0_0$0                 main
      00000215  _white_tile                        main
-     00000225  A$lcc105680$216                    main
-     00000225  C$main.c$173$1_0$170               main
-     00000225  C$main.c$175$1_0$170               main
+     00000225  A$lcc32320$212                     main
+     00000225  C$main.c$166$1_0$170               main
+     00000225  C$main.c$168$1_0$170               main
      00000225  G$sfx_2$0$0                        main
      00000225  _sfx_2                             main
-     00000227  A$lcc105680$217                    main
-     00000229  A$lcc105680$221                    main
-     00000229  C$main.c$176$1_0$170               main
-     0000022B  A$lcc105680$222                    main
-     0000022D  A$lcc105680$226                    main
-     0000022D  C$main.c$177$1_0$170               main
-     0000022F  A$lcc105680$227                    main
-     00000231  A$lcc105680$231                    main
-     00000231  C$main.c$178$1_0$170               main
-     00000233  A$lcc105680$232                    main
-     00000235  A$lcc105680$236                    main
-     00000235  C$main.c$179$1_0$170               main
-     00000237  A$lcc105680$237                    main
-     00000239  A$lcc105680$245                    main
-     00000239  C$main.c$180$1_0$170               main
+     00000227  A$lcc32320$213                     main
+     00000229  A$lcc32320$217                     main
+     00000229  C$main.c$169$1_0$170               main
+     0000022B  A$lcc32320$218                     main
+     0000022D  A$lcc32320$222                     main
+     0000022D  C$main.c$170$1_0$170               main
+     0000022F  A$lcc32320$223                     main
+     00000231  A$lcc32320$227                     main
+     00000231  C$main.c$171$1_0$170               main
+     00000233  A$lcc32320$228                     main
+     00000235  A$lcc32320$232                     main
+     00000235  C$main.c$172$1_0$170               main
+     00000237  A$lcc32320$233                     main
+     00000239  A$lcc32320$241                     main
+     00000239  C$main.c$173$1_0$170               main
      00000239  XG$sfx_2$0$0                       main
-     0000023A  A$lcc105680$258                    main
-     0000023A  C$main.c$182$1_0$172               main
-     0000023A  C$main.c$184$1_0$172               main
+     0000023A  A$lcc32320$254                     main
+     0000023A  C$main.c$175$1_0$172               main
+     0000023A  C$main.c$177$1_0$172               main
      0000023A  G$sfx_4$0$0                        main
      0000023A  _sfx_4                             main
-     0000023C  A$lcc105680$259                    main
+     0000023C  A$lcc32320$255                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000023E  A$lcc105680$263                    main
-     0000023E  C$main.c$185$1_0$172               main
-     00000240  A$lcc105680$264                    main
-     00000242  A$lcc105680$268                    main
-     00000242  C$main.c$186$1_0$172               main
-     00000244  A$lcc105680$269                    main
-     00000246  A$lcc105680$273                    main
-     00000246  C$main.c$187$1_0$172               main
-     00000248  A$lcc105680$274                    main
-     0000024A  A$lcc105680$278                    main
-     0000024A  C$main.c$188$1_0$172               main
-     0000024C  A$lcc105680$279                    main
-     0000024E  A$lcc105680$287                    main
-     0000024E  C$main.c$189$1_0$172               main
+     0000023E  A$lcc32320$259                     main
+     0000023E  C$main.c$178$1_0$172               main
+     00000240  A$lcc32320$260                     main
+     00000242  A$lcc32320$264                     main
+     00000242  C$main.c$179$1_0$172               main
+     00000244  A$lcc32320$265                     main
+     00000246  A$lcc32320$269                     main
+     00000246  C$main.c$180$1_0$172               main
+     00000248  A$lcc32320$270                     main
+     0000024A  A$lcc32320$274                     main
+     0000024A  C$main.c$181$1_0$172               main
+     0000024C  A$lcc32320$275                     main
+     0000024E  A$lcc32320$283                     main
+     0000024E  C$main.c$182$1_0$172               main
      0000024E  XG$sfx_4$0$0                       main
-     0000024F  A$lcc105680$300                    main
-     0000024F  C$main.c$195$1_0$174               main
-     0000024F  C$main.c$205$1_0$174               main
+     0000024F  A$lcc32320$296                     main
+     0000024F  C$main.c$188$1_0$174               main
+     0000024F  C$main.c$198$1_0$174               main
      0000024F  G$set_cpu$0$0                      main
      0000024F  _set_cpu                           main
-     00000250  A$lcc105680$304                    main
-     00000250  C$main.c$198$2_0$175               main
-     00000253  A$lcc105680$305                    main
-     00000255  A$lcc105680$306                    main
-     00000257  A$lcc105680$307                    main
-     0000025A  A$lcc105680$308                    main
-     0000025C  A$lcc105680$313                    main
-     0000025C  C$main.c$199$2_0$175               main
-     0000025F  A$lcc105680$314                    main
-     00000261  A$lcc105680$315                    main
-     00000263  A$lcc105680$319                    main
-     00000263  C$main.c$200$3_0$176               main
-     00000266  A$lcc105680$323                    main
-     00000266  C$main.c$201$3_0$176               main
-     00000269  A$lcc105680$324                    main
-     0000026B  A$lcc105680$328                    main
-     0000026B  C$main.c$203$3_0$176               main
-     0000026E  A$lcc105680$330                    main
-     0000026F  A$lcc105680$338                    main
-     0000026F  C$main.c$207$2_0$174               main
+     00000250  A$lcc32320$300                     main
+     00000250  C$main.c$191$2_0$175               main
+     00000253  A$lcc32320$301                     main
+     00000255  A$lcc32320$302                     main
+     00000257  A$lcc32320$303                     main
+     0000025A  A$lcc32320$304                     main
+     0000025C  A$lcc32320$309                     main
+     0000025C  C$main.c$192$2_0$175               main
+     0000025F  A$lcc32320$310                     main
+     00000261  A$lcc32320$311                     main
+     00000263  A$lcc32320$315                     main
+     00000263  C$main.c$193$3_0$176               main
+     00000266  A$lcc32320$319                     main
+     00000266  C$main.c$194$3_0$176               main
+     00000269  A$lcc32320$320                     main
+     0000026B  A$lcc32320$324                     main
+     0000026B  C$main.c$196$3_0$176               main
+     0000026E  A$lcc32320$326                     main
+     0000026F  A$lcc32320$334                     main
+     0000026F  C$main.c$200$2_0$174               main
      0000026F  XG$set_cpu$0$0                     main
-     00000270  A$lcc105680$351                    main
-     00000270  C$main.c$209$2_0$178               main
-     00000270  C$main.c$219$1_0$178               main
+     00000270  A$lcc32320$347                     main
+     00000270  C$main.c$202$2_0$178               main
+     00000270  C$main.c$212$1_0$178               main
      00000270  G$set_timer_realtime_reg$0$0       main
      00000270  _set_timer_realtime_reg            main
-     00000271  A$lcc105680$355                    main
-     00000271  C$main.c$212$2_0$179               main
-     00000274  A$lcc105680$356                    main
-     00000276  A$lcc105680$357                    main
-     00000278  A$lcc105680$361                    main
+     00000271  A$lcc32320$351                     main
+     00000271  C$main.c$205$2_0$179               main
+     00000274  A$lcc32320$352                     main
+     00000276  A$lcc32320$353                     main
+     00000278  A$lcc32320$357                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000278  C$main.c$213$3_0$180               main
-     0000027A  A$lcc105680$362                    main
-     0000027C  A$lcc105680$366                    main
-     0000027C  C$main.c$214$3_0$180               main
-     0000027E  A$lcc105680$367                    main
-     00000280  A$lcc105680$368                    main
-     00000282  A$lcc105680$373                    main
-     00000282  C$main.c$216$3_0$181               main
-     00000284  A$lcc105680$374                    main
-     00000286  A$lcc105680$378                    main
-     00000286  C$main.c$217$3_0$181               main
-     00000288  A$lcc105680$379                    main
-     0000028A  A$lcc105680$381                    main
-     0000028B  A$lcc105680$389                    main
-     0000028B  C$main.c$221$2_0$178               main
+     00000278  C$main.c$206$3_0$180               main
+     0000027A  A$lcc32320$358                     main
+     0000027C  A$lcc32320$362                     main
+     0000027C  C$main.c$207$3_0$180               main
+     0000027E  A$lcc32320$363                     main
+     00000280  A$lcc32320$364                     main
+     00000282  A$lcc32320$369                     main
+     00000282  C$main.c$209$3_0$181               main
+     00000284  A$lcc32320$370                     main
+     00000286  A$lcc32320$374                     main
+     00000286  C$main.c$210$3_0$181               main
+     00000288  A$lcc32320$375                     main
+     0000028A  A$lcc32320$377                     main
+     0000028B  A$lcc32320$385                     main
+     0000028B  C$main.c$214$2_0$178               main
      0000028B  XG$set_timer_realtime_reg$0$0      main
-     0000028C  A$lcc105680$402                    main
-     0000028C  C$main.c$223$2_0$184               main
-     0000028C  C$main.c$225$3_0$185               main
+     0000028C  A$lcc32320$398                     main
+     0000028C  C$main.c$216$2_0$184               main
+     0000028C  C$main.c$218$3_0$185               main
      0000028C  G$clear_sprite_tiles$0$0           main
      0000028C  _clear_sprite_tiles                main
-     0000028E  A$lcc105680$404                    main
-     0000028F  A$lcc105680$405                    main
-     00000291  A$lcc105680$406                    main
-     00000292  A$lcc105680$410                    main
-     00000292  C$main.c$226$3_0$185               main
-     00000295  A$lcc105680$411                    main
-     00000296  A$lcc105680$412                    main
-     00000298  A$lcc105680$413                    main
-     00000299  A$lcc105680$414                    main
-     0000029A  A$lcc105680$415                    main
-     0000029B  A$lcc105680$416                    main
-     0000029C  A$lcc105680$417                    main
-     0000029F  A$lcc105680$418                    main
-     000002A1  A$lcc105680$422                    main
-     000002A1  C$main.c$225$2_0$184               main
-     000002A2  A$lcc105680$430                    main
-     000002A2  C$main.c$229$2_0$184               main
+     0000028E  A$lcc32320$400                     main
+     0000028F  A$lcc32320$401                     main
+     00000291  A$lcc32320$402                     main
+     00000292  A$lcc32320$406                     main
+     00000292  C$main.c$219$3_0$185               main
+     00000295  A$lcc32320$407                     main
+     00000296  A$lcc32320$408                     main
+     00000298  A$lcc32320$409                     main
+     00000299  A$lcc32320$410                     main
+     0000029A  A$lcc32320$411                     main
+     0000029B  A$lcc32320$412                     main
+     0000029C  A$lcc32320$413                     main
+     0000029F  A$lcc32320$414                     main
+     000002A1  A$lcc32320$418                     main
+     000002A1  C$main.c$218$2_0$184               main
+     000002A2  A$lcc32320$426                     main
+     000002A2  C$main.c$222$2_0$184               main
      000002A2  XG$clear_sprite_tiles$0$0          main
-     000002A4  A$lcc105680$443                    main
-     000002A4  C$main.c$231$2_0$187               main
-     000002A4  C$main.c$233$1_0$187               main
+     000002A4  A$lcc32320$439                     main
+     000002A4  C$main.c$224$2_0$187               main
+     000002A4  C$main.c$226$1_0$187               main
      000002A4  G$init_system$0$0                  main
      000002A4  _init_system                       main
-     000002A7  A$lcc105680$447                    main
-     000002A7  C$main.c$235$1_0$187               main
-     000002AA  A$lcc105680$451                    main
-     000002AA  C$main.c$236$1_0$187               main
-     000002AB  A$lcc105680$452                    main
-     000002AC  A$lcc105680$453                    main
-     000002AD  A$lcc105680$454                    main
+     000002A7  A$lcc32320$443                     main
+     000002A7  C$main.c$228$1_0$187               main
+     000002AA  A$lcc32320$447                     main
+     000002AA  C$main.c$229$1_0$187               main
+     000002AB  A$lcc32320$448                     main
+     000002AC  A$lcc32320$449                     main
+     000002AD  A$lcc32320$450                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000002B0  A$lcc105680$455                    main
-     000002B1  A$lcc105680$459                    main
-     000002B1  C$main.c$238$1_0$187               main
-     000002B3  A$lcc105680$460                    main
-     000002B6  A$lcc105680$462                    main
-     000002B7  A$lcc105680$466                    main
-     000002B7  C$main.c$241$1_0$187               main
-     000002B9  A$lcc105680$467                    main
-     000002BB  A$lcc105680$468                    main
-     000002BD  A$lcc105680$472                    main
-     000002BD  C$main.c$242$1_0$187               main
-     000002BF  A$lcc105680$473                    main
-     000002C1  A$lcc105680$474                    main
-     000002C3  A$lcc105680$478                    main
-     000002C3  C$main.c$244$1_0$187               main
-     000002C5  A$lcc105680$479                    main
-     000002C7  A$lcc105680$480                    main
-     000002C9  A$lcc105680$481                    main
-     000002CB  A$lcc105680$482                    main
-     000002CD  A$lcc105680$483                    main
-     000002CF  A$lcc105680$487                    main
-     000002CF  C$main.c$245$1_0$187               main
-     000002D1  A$lcc105680$488                    main
-     000002D3  A$lcc105680$489                    main
-     000002D5  A$lcc105680$497                    main
-     000002D5  C$main.c$247$1_0$187               main
+     000002B0  A$lcc32320$451                     main
+     000002B1  A$lcc32320$455                     main
+     000002B1  C$main.c$231$1_0$187               main
+     000002B3  A$lcc32320$456                     main
+     000002B6  A$lcc32320$458                     main
+     000002B7  A$lcc32320$462                     main
+     000002B7  C$main.c$234$1_0$187               main
+     000002B9  A$lcc32320$463                     main
+     000002BB  A$lcc32320$464                     main
+     000002BD  A$lcc32320$468                     main
+     000002BD  C$main.c$235$1_0$187               main
+     000002BF  A$lcc32320$469                     main
+     000002C1  A$lcc32320$470                     main
+     000002C3  A$lcc32320$474                     main
+     000002C3  C$main.c$237$1_0$187               main
+     000002C5  A$lcc32320$475                     main
+     000002C7  A$lcc32320$476                     main
+     000002C9  A$lcc32320$477                     main
+     000002CB  A$lcc32320$478                     main
+     000002CD  A$lcc32320$479                     main
+     000002CF  A$lcc32320$483                     main
+     000002CF  C$main.c$238$1_0$187               main
+     000002D1  A$lcc32320$484                     main
+     000002D3  A$lcc32320$485                     main
+     000002D5  A$lcc32320$493                     main
+     000002D5  C$main.c$240$1_0$187               main
      000002D5  XG$init_system$0$0                 main
-     000002D6  A$lcc105680$510                    main
-     000002D6  C$main.c$253$1_0$192               main
-     000002D6  C$main.c$255$1_0$192               main
+     000002D6  A$lcc32320$506                     main
+     000002D6  C$main.c$246$1_0$192               main
+     000002D6  C$main.c$248$1_0$192               main
      000002D6  G$stopwatch_timer_isr$0$0          main
      000002D6  _stopwatch_timer_isr               main
-     000002D9  A$lcc105680$511                    main
-     000002DB  A$lcc105680$512                    main
-     000002DC  A$lcc105680$516                    main
-     000002DC  C$main.c$256$2_0$193               main
-     000002DF  A$lcc105680$517                    main
-     000002E0  A$lcc105680$518                    main
-     000002E1  A$lcc105680$522                    main
-     000002E1  C$main.c$257$2_0$193               main
-     000002E2  A$lcc105680$523                    main
-     000002E4  A$lcc105680$524                    main
-     000002E5  A$lcc105680$528                    main
-     000002E5  C$main.c$258$3_0$194               main
-     000002E7  A$lcc105680$532                    main
-     000002E7  C$main.c$259$3_0$194               main
-     000002EA  A$lcc105680$533                    main
-     000002EB  A$lcc105680$534                    main
-     000002EC  A$lcc105680$538                    main
-     000002EC  C$main.c$260$3_0$194               main
-     000002EF  A$lcc105680$539                    main
+     000002D9  A$lcc32320$507                     main
+     000002DB  A$lcc32320$508                     main
+     000002DC  A$lcc32320$512                     main
+     000002DC  C$main.c$249$2_0$193               main
+     000002DF  A$lcc32320$513                     main
+     000002E0  A$lcc32320$514                     main
+     000002E1  A$lcc32320$518                     main
+     000002E1  C$main.c$250$2_0$193               main
+     000002E2  A$lcc32320$519                     main
+     000002E4  A$lcc32320$520                     main
+     000002E5  A$lcc32320$524                     main
+     000002E5  C$main.c$251$3_0$194               main
+     000002E7  A$lcc32320$528                     main
+     000002E7  C$main.c$252$3_0$194               main
+     000002EA  A$lcc32320$529                     main
+     000002EB  A$lcc32320$530                     main
+     000002EC  A$lcc32320$534                     main
+     000002EC  C$main.c$253$3_0$194               main
+     000002EF  A$lcc32320$535                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000002F1  A$lcc105680$543                    main
-     000002F1  C$main.c$261$3_0$194               main
-     000002F4  A$lcc105680$544                    main
-     000002F5  A$lcc105680$545                    main
-     000002F7  A$lcc105680$546                    main
-     000002F8  A$lcc105680$550                    main
-     000002F8  C$main.c$262$4_0$195               main
-     000002FA  A$lcc105680$554                    main
-     000002FA  C$main.c$263$4_0$195               main
-     000002FD  A$lcc105680$555                    main
-     000002FE  A$lcc105680$556                    main
-     000002FF  A$lcc105680$564                    main
-     000002FF  C$main.c$268$1_0$192               main
+     000002F1  A$lcc32320$539                     main
+     000002F1  C$main.c$254$3_0$194               main
+     000002F4  A$lcc32320$540                     main
+     000002F5  A$lcc32320$541                     main
+     000002F7  A$lcc32320$542                     main
+     000002F8  A$lcc32320$546                     main
+     000002F8  C$main.c$255$4_0$195               main
+     000002FA  A$lcc32320$550                     main
+     000002FA  C$main.c$256$4_0$195               main
+     000002FD  A$lcc32320$551                     main
+     000002FE  A$lcc32320$552                     main
+     000002FF  A$lcc32320$560                     main
+     000002FF  C$main.c$261$1_0$192               main
      000002FF  XG$stopwatch_timer_isr$0$0         main
-     00000300  A$lcc105680$577                    main
-     00000300  C$main.c$270$1_0$197               main
-     00000300  C$main.c$274$1_0$197               main
+     00000300  A$lcc32320$573                     main
+     00000300  C$main.c$263$1_0$197               main
+     00000300  C$main.c$267$1_0$197               main
      00000300  G$set_timer_isr_stopwatch$0$0      main
      00000300  _set_timer_isr_stopwatch           main
-     00000301  A$lcc105680$581                    main
-     00000301  C$main.c$273$2_0$198               main
-     00000304  A$lcc105680$582                    main
-     00000307  A$lcc105680$583                    main
-     00000308  A$lcc105680$591                    main
-     00000308  C$main.c$276$2_0$197               main
+     00000301  A$lcc32320$577                     main
+     00000301  C$main.c$266$2_0$198               main
+     00000304  A$lcc32320$578                     main
+     00000307  A$lcc32320$579                     main
+     00000308  A$lcc32320$587                     main
+     00000308  C$main.c$269$2_0$197               main
      00000308  XG$set_timer_isr_stopwatch$0$0     main
-     00000309  A$lcc105680$604                    main
-     00000309  C$main.c$278$2_0$200               main
-     00000309  C$main.c$282$1_0$200               main
+     00000309  A$lcc32320$600                     main
+     00000309  C$main.c$271$2_0$200               main
+     00000309  C$main.c$275$1_0$200               main
      00000309  G$clear_timer_isr_stopwatch$0$0    main
      00000309  _clear_timer_isr_stopwatch         main
-     0000030A  A$lcc105680$608                    main
-     0000030A  C$main.c$281$2_0$201               main
-     0000030D  A$lcc105680$609                    main
-     00000310  A$lcc105680$610                    main
-     00000311  A$lcc105680$618                    main
-     00000311  C$main.c$284$2_0$200               main
+     0000030A  A$lcc32320$604                     main
+     0000030A  C$main.c$274$2_0$201               main
+     0000030D  A$lcc32320$605                     main
+     00000310  A$lcc32320$606                     main
+     00000311  A$lcc32320$614                     main
+     00000311  C$main.c$277$2_0$200               main
      00000311  XG$clear_timer_isr_stopwatch$0$0   main
-     00000312  A$lcc105680$631                    main
-     00000312  C$main.c$290$2_0$203               main
-     00000312  C$main.c$292$1_0$203               main
+     00000312  A$lcc32320$627                     main
+     00000312  C$main.c$283$2_0$203               main
+     00000312  C$main.c$285$1_0$203               main
      00000312  G$init_scene$0$0                   main
      00000312  _init_scene                        main
-     00000315  A$lcc105680$632                    main
-     00000316  A$lcc105680$633                    main
-     00000319  A$lcc105680$634                    main
-     0000031A  A$lcc105680$638                    main
-     0000031A  C$main.c$293$1_0$203               main
-     0000031D  A$lcc105680$639                    main
-     0000031E  A$lcc105680$640                    main
-     00000321  A$lcc105680$641                    main
+     00000315  A$lcc32320$628                     main
+     00000316  A$lcc32320$629                     main
+     00000319  A$lcc32320$630                     main
+     0000031A  A$lcc32320$634                     main
+     0000031A  C$main.c$286$1_0$203               main
+     0000031D  A$lcc32320$635                     main
+     0000031E  A$lcc32320$636                     main
+     00000321  A$lcc32320$637                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000322  A$lcc105680$645                    main
-     00000322  C$main.c$294$1_0$203               main
-     00000325  A$lcc105680$646                    main
-     00000326  A$lcc105680$647                    main
-     00000329  A$lcc105680$648                    main
-     0000032A  A$lcc105680$652                    main
-     0000032A  C$main.c$295$1_0$203               main
-     0000032D  A$lcc105680$653                    main
-     0000032E  A$lcc105680$654                    main
-     00000331  A$lcc105680$655                    main
-     00000332  A$lcc105680$659                    main
-     00000332  C$main.c$297$1_0$203               main
-     00000335  A$lcc105680$660                    main
-     00000336  A$lcc105680$661                    main
-     00000339  A$lcc105680$662                    main
-     0000033A  A$lcc105680$666                    main
-     0000033A  C$main.c$298$1_0$203               main
-     0000033D  A$lcc105680$667                    main
-     0000033E  A$lcc105680$668                    main
-     00000341  A$lcc105680$669                    main
-     00000342  A$lcc105680$673                    main
-     00000342  C$main.c$300$1_0$203               main
-     00000345  A$lcc105680$674                    main
-     00000346  A$lcc105680$675                    main
-     00000349  A$lcc105680$676                    main
-     0000034A  A$lcc105680$680                    main
-     0000034A  C$main.c$301$1_0$203               main
-     0000034D  A$lcc105680$681                    main
-     0000034E  A$lcc105680$682                    main
-     00000351  A$lcc105680$683                    main
-     00000352  A$lcc105680$687                    main
-     00000352  C$main.c$302$1_0$203               main
-     00000355  A$lcc105680$688                    main
-     00000356  A$lcc105680$689                    main
-     00000359  A$lcc105680$690                    main
-     0000035A  A$lcc105680$694                    main
-     0000035A  C$main.c$303$1_0$203               main
-     0000035D  A$lcc105680$695                    main
-     0000035E  A$lcc105680$696                    main
-     00000361  A$lcc105680$697                    main
-     00000362  A$lcc105680$701                    main
-     00000362  C$main.c$304$1_0$203               main
-     00000365  A$lcc105680$702                    main
-     00000366  A$lcc105680$703                    main
-     00000369  A$lcc105680$704                    main
-     0000036A  A$lcc105680$708                    main
-     0000036A  C$main.c$305$1_0$203               main
-     0000036D  A$lcc105680$709                    main
-     0000036E  A$lcc105680$710                    main
-     00000371  A$lcc105680$711                    main
-     00000372  A$lcc105680$719                    main
+     00000322  A$lcc32320$641                     main
+     00000322  C$main.c$287$1_0$203               main
+     00000325  A$lcc32320$642                     main
+     00000326  A$lcc32320$643                     main
+     00000329  A$lcc32320$644                     main
+     0000032A  A$lcc32320$648                     main
+     0000032A  C$main.c$288$1_0$203               main
+     0000032D  A$lcc32320$649                     main
+     0000032E  A$lcc32320$650                     main
+     00000331  A$lcc32320$651                     main
+     00000332  A$lcc32320$655                     main
+     00000332  C$main.c$290$1_0$203               main
+     00000335  A$lcc32320$656                     main
+     00000336  A$lcc32320$657                     main
+     00000339  A$lcc32320$658                     main
+     0000033A  A$lcc32320$662                     main
+     0000033A  C$main.c$291$1_0$203               main
+     0000033D  A$lcc32320$663                     main
+     0000033E  A$lcc32320$664                     main
+     00000341  A$lcc32320$665                     main
+     00000342  A$lcc32320$669                     main
+     00000342  C$main.c$293$1_0$203               main
+     00000345  A$lcc32320$670                     main
+     00000346  A$lcc32320$671                     main
+     00000349  A$lcc32320$672                     main
+     0000034A  A$lcc32320$676                     main
+     0000034A  C$main.c$294$1_0$203               main
+     0000034D  A$lcc32320$677                     main
+     0000034E  A$lcc32320$678                     main
+     00000351  A$lcc32320$679                     main
+     00000352  A$lcc32320$683                     main
+     00000352  C$main.c$295$1_0$203               main
+     00000355  A$lcc32320$684                     main
+     00000356  A$lcc32320$685                     main
+     00000359  A$lcc32320$686                     main
+     0000035A  A$lcc32320$690                     main
+     0000035A  C$main.c$296$1_0$203               main
+     0000035D  A$lcc32320$691                     main
+     0000035E  A$lcc32320$692                     main
+     00000361  A$lcc32320$693                     main
+     00000362  A$lcc32320$697                     main
+     00000362  C$main.c$297$1_0$203               main
+     00000365  A$lcc32320$698                     main
+     00000366  A$lcc32320$699                     main
+     00000369  A$lcc32320$700                     main
+     0000036A  A$lcc32320$704                     main
+     0000036A  C$main.c$298$1_0$203               main
+     0000036D  A$lcc32320$705                     main
+     0000036E  A$lcc32320$706                     main
+     00000371  A$lcc32320$707                     main
+     00000372  A$lcc32320$715                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000372  C$main.c$307$1_0$203               main
+     00000372  C$main.c$300$1_0$203               main
      00000372  XG$init_scene$0$0                  main
      00000373  Fmain$__str_0$0_0$0                main
      00000382  Fmain$__str_1$0_0$0                main
      00000395  Fmain$__str_2$0_0$0                main
      0000039E  Fmain$__str_3$0_0$0                main
      000003A9  Fmain$__str_4$0_0$0                main
-     000003B4  A$lcc105680$752                    main
-     000003B4  C$main.c$336$1_0$211               main
-     000003B4  C$main.c$338$1_0$211               main
+     000003B4  A$lcc32320$748                     main
+     000003B4  C$main.c$329$1_0$211               main
+     000003B4  C$main.c$331$1_0$211               main
      000003B4  G$reset_stopwatch$0$0              main
      000003B4  _reset_stopwatch                   main
-     000003B7  A$lcc105680$756                    main
-     000003B7  C$main.c$340$1_0$211               main
-     000003BA  A$lcc105680$757                    main
-     000003BC  A$lcc105680$761                    main
-     000003BC  C$main.c$342$1_0$211               main
-     000003BF  A$lcc105680$762                    main
-     000003C1  A$lcc105680$766                    main
-     000003C1  C$main.c$343$1_0$211               main
-     000003C4  A$lcc105680$767                    main
-     000003C6  A$lcc105680$771                    main
-     000003C6  C$main.c$344$1_0$211               main
-     000003C9  A$lcc105680$772                    main
-     000003CB  A$lcc105680$776                    main
-     000003CB  C$main.c$346$1_0$211               main
-     000003CE  A$lcc105680$777                    main
-     000003CF  A$lcc105680$778                    main
-     000003D2  A$lcc105680$779                    main
-     000003D3  A$lcc105680$783                    main
-     000003D3  C$main.c$347$1_0$211               main
-     000003D6  A$lcc105680$784                    main
-     000003D7  A$lcc105680$785                    main
-     000003DA  A$lcc105680$786                    main
-     000003DB  A$lcc105680$794                    main
-     000003DB  C$main.c$349$1_0$211               main
+     000003B7  A$lcc32320$752                     main
+     000003B7  C$main.c$333$1_0$211               main
+     000003BA  A$lcc32320$753                     main
+     000003BC  A$lcc32320$757                     main
+     000003BC  C$main.c$335$1_0$211               main
+     000003BF  A$lcc32320$758                     main
+     000003C1  A$lcc32320$762                     main
+     000003C1  C$main.c$336$1_0$211               main
+     000003C4  A$lcc32320$763                     main
+     000003C6  A$lcc32320$767                     main
+     000003C6  C$main.c$337$1_0$211               main
+     000003C9  A$lcc32320$768                     main
+     000003CB  A$lcc32320$772                     main
+     000003CB  C$main.c$339$1_0$211               main
+     000003CE  A$lcc32320$773                     main
+     000003CF  A$lcc32320$774                     main
+     000003D2  A$lcc32320$775                     main
+     000003D3  A$lcc32320$779                     main
+     000003D3  C$main.c$340$1_0$211               main
+     000003D6  A$lcc32320$780                     main
+     000003D7  A$lcc32320$781                     main
+     000003DA  A$lcc32320$782                     main
+     000003DB  A$lcc32320$790                     main
+     000003DB  C$main.c$342$1_0$211               main
      000003DB  XG$reset_stopwatch$0$0             main
      000003DC  Fmain$__str_5$0_0$0                main
-     000003E5  A$lcc105680$811                    main
+     000003E5  A$lcc32320$807                     main
+     000003E5  C$main.c$344$1_0$213               main
      000003E5  C$main.c$351$1_0$213               main
-     000003E5  C$main.c$358$1_0$213               main
      000003E5  G$pause_stopwatch$0$0              main
      000003E5  _pause_stopwatch                   main
-     000003E6  A$lcc105680$815                    main
-     000003E6  C$main.c$356$2_0$214               main
-     000003E7  A$lcc105680$816                    main
-     000003E9  A$lcc105680$820                    main
-     000003E9  C$main.c$357$2_0$214               main
-     000003EC  A$lcc105680$821                    main
-     000003EE  A$lcc105680$822                    main
-     000003EF  A$lcc105680$826                    main
+     000003E6  A$lcc32320$811                     main
+     000003E6  C$main.c$349$2_0$214               main
+     000003E7  A$lcc32320$812                     main
+     000003E9  A$lcc32320$816                     main
+     000003E9  C$main.c$350$2_0$214               main
+     000003EC  A$lcc32320$817                     main
+     000003EE  A$lcc32320$818                     main
+     000003EF  A$lcc32320$822                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000003EF  C$main.c$360$1_0$213               main
-     000003F1  A$lcc105680$827                    main
-     000003F3  A$lcc105680$831                    main
-     000003F3  C$main.c$361$1_0$213               main
-     000003F6  A$lcc105680$835                    main
-     000003F6  C$main.c$363$1_0$213               main
-     000003F9  A$lcc105680$836                    main
-     000003FA  A$lcc105680$837                    main
-     000003FD  A$lcc105680$838                    main
-     000003FE  A$lcc105680$842                    main
-     000003FE  C$main.c$364$1_0$213               main
-     00000401  A$lcc105680$843                    main
-     00000402  A$lcc105680$844                    main
-     00000405  A$lcc105680$845                    main
-     00000406  A$lcc105680$849                    main
-     00000406  C$main.c$365$1_0$213               main
-     00000409  A$lcc105680$850                    main
-     0000040A  A$lcc105680$851                    main
-     0000040D  A$lcc105680$852                    main
-     0000040E  A$lcc105680$856                    main
-     0000040E  C$main.c$366$1_0$213               main
-     00000411  A$lcc105680$857                    main
-     00000412  A$lcc105680$858                    main
-     00000415  A$lcc105680$859                    main
-     00000416  A$lcc105680$867                    main
-     00000416  C$main.c$368$1_0$213               main
+     000003EF  C$main.c$353$1_0$213               main
+     000003F1  A$lcc32320$823                     main
+     000003F3  A$lcc32320$827                     main
+     000003F3  C$main.c$354$1_0$213               main
+     000003F6  A$lcc32320$831                     main
+     000003F6  C$main.c$356$1_0$213               main
+     000003F9  A$lcc32320$832                     main
+     000003FA  A$lcc32320$833                     main
+     000003FD  A$lcc32320$834                     main
+     000003FE  A$lcc32320$838                     main
+     000003FE  C$main.c$357$1_0$213               main
+     00000401  A$lcc32320$839                     main
+     00000402  A$lcc32320$840                     main
+     00000405  A$lcc32320$841                     main
+     00000406  A$lcc32320$845                     main
+     00000406  C$main.c$358$1_0$213               main
+     00000409  A$lcc32320$846                     main
+     0000040A  A$lcc32320$847                     main
+     0000040D  A$lcc32320$848                     main
+     0000040E  A$lcc32320$852                     main
+     0000040E  C$main.c$359$1_0$213               main
+     00000411  A$lcc32320$853                     main
+     00000412  A$lcc32320$854                     main
+     00000415  A$lcc32320$855                     main
+     00000416  A$lcc32320$863                     main
+     00000416  C$main.c$361$1_0$213               main
      00000416  XG$pause_stopwatch$0$0             main
      00000417  Fmain$__str_6$0_0$0                main
      0000041D  Fmain$__str_7$0_0$0                main
-     00000428  A$lcc105680$888                    main
-     00000428  C$main.c$370$1_0$216               main
-     00000428  C$main.c$375$1_0$216               main
+     00000428  A$lcc32320$884                     main
+     00000428  C$main.c$363$1_0$216               main
+     00000428  C$main.c$368$1_0$216               main
      00000428  G$start_stopwatch$0$0              main
      00000428  _start_stopwatch                   main
-     00000429  A$lcc105680$892                    main
-     00000429  C$main.c$373$2_0$217               main
-     0000042C  A$lcc105680$893                    main
-     0000042E  A$lcc105680$894                    main
-     00000430  A$lcc105680$895                    main
-     00000432  A$lcc105680$896                    main
-     00000434  A$lcc105680$898                    main
-     00000436  A$lcc105680$902                    main
-     00000436  C$main.c$374$2_0$217               main
-     00000439  A$lcc105680$903                    main
-     0000043B  A$lcc105680$904                    main
-     0000043C  A$lcc105680$908                    main
-     0000043C  C$main.c$377$1_0$216               main
-     0000043E  A$lcc105680$909                    main
-     00000440  A$lcc105680$913                    main
-     00000440  C$main.c$378$1_0$216               main
-     00000443  A$lcc105680$917                    main
+     00000429  A$lcc32320$888                     main
+     00000429  C$main.c$366$2_0$217               main
+     0000042C  A$lcc32320$889                     main
+     0000042E  A$lcc32320$890                     main
+     00000430  A$lcc32320$891                     main
+     00000432  A$lcc32320$892                     main
+     00000434  A$lcc32320$894                     main
+     00000436  A$lcc32320$898                     main
+     00000436  C$main.c$367$2_0$217               main
+     00000439  A$lcc32320$899                     main
+     0000043B  A$lcc32320$900                     main
+     0000043C  A$lcc32320$904                     main
+     0000043C  C$main.c$370$1_0$216               main
+     0000043E  A$lcc32320$905                     main
+     00000440  A$lcc32320$909                     main
+     00000440  C$main.c$371$1_0$216               main
+     00000443  A$lcc32320$913                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 13.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000443  C$main.c$380$1_0$216               main
-     00000446  A$lcc105680$918                    main
-     00000447  A$lcc105680$919                    main
-     0000044A  A$lcc105680$920                    main
-     0000044B  A$lcc105680$924                    main
-     0000044B  C$main.c$381$1_0$216               main
-     0000044E  A$lcc105680$925                    main
-     0000044F  A$lcc105680$926                    main
-     00000452  A$lcc105680$927                    main
-     00000453  A$lcc105680$931                    main
-     00000453  C$main.c$382$1_0$216               main
-     00000456  A$lcc105680$932                    main
-     00000457  A$lcc105680$933                    main
-     0000045A  A$lcc105680$934                    main
-     0000045B  A$lcc105680$938                    main
-     0000045B  C$main.c$383$1_0$216               main
-     0000045E  A$lcc105680$939                    main
-     0000045F  A$lcc105680$940                    main
-     00000462  A$lcc105680$941                    main
-     00000463  A$lcc105680$949                    main
-     00000463  C$main.c$385$1_0$216               main
+     00000443  C$main.c$373$1_0$216               main
+     00000446  A$lcc32320$914                     main
+     00000447  A$lcc32320$915                     main
+     0000044A  A$lcc32320$916                     main
+     0000044B  A$lcc32320$920                     main
+     0000044B  C$main.c$374$1_0$216               main
+     0000044E  A$lcc32320$921                     main
+     0000044F  A$lcc32320$922                     main
+     00000452  A$lcc32320$923                     main
+     00000453  A$lcc32320$927                     main
+     00000453  C$main.c$375$1_0$216               main
+     00000456  A$lcc32320$928                     main
+     00000457  A$lcc32320$929                     main
+     0000045A  A$lcc32320$930                     main
+     0000045B  A$lcc32320$934                     main
+     0000045B  C$main.c$376$1_0$216               main
+     0000045E  A$lcc32320$935                     main
+     0000045F  A$lcc32320$936                     main
+     00000462  A$lcc32320$937                     main
+     00000463  A$lcc32320$945                     main
+     00000463  C$main.c$378$1_0$216               main
      00000463  XG$start_stopwatch$0$0             main
      00000464  Fmain$__str_8$0_0$0                main
      0000046A  Fmain$__str_9$0_0$0                main
-     00000475  A$lcc105680$967                    main
-     00000475  C$main.c$387$1_0$219               main
+     00000475  A$lcc32320$963                     main
+     00000475  C$main.c$380$1_0$219               main
      00000475  G$handle_inputs$0$0                main
      00000475  _handle_inputs                     main
-     00000476  A$lcc105680$971                    main
-     00000476  C$main.c$390$1_0$219               main
-     00000479  A$lcc105680$972                    main
-     0000047B  A$lcc105680$973                    main
-     0000047C  A$lcc105680$977                    main
-     0000047C  C$main.c$392$1_0$219               main
-     0000047F  A$lcc105680$978                    main
-     00000481  A$lcc105680$979                    main
-     00000483  A$lcc105680$980                    main
-     00000486  A$lcc105680$981                    main
-     00000488  A$lcc105680$982                    main
-     0000048A  A$lcc105680$986                    main
-     0000048A  C$main.c$393$2_0$220               main
-     0000048D  A$lcc105680$987                    main
-     0000048F  A$lcc105680$988                    main
-     00000491  A$lcc105680$989                    main
-     00000494  A$lcc105680$990                    main
-     00000496  A$lcc105680$995                    main
-     00000496  C$main.c$394$2_0$220               main
-     00000499  A$lcc105680$1000                   main
-     00000499  C$main.c$396$1_0$219               main
-     0000049C  A$lcc105680$1001                   main
-     0000049E  A$lcc105680$1002                   main
+     00000476  A$lcc32320$967                     main
+     00000476  C$main.c$383$1_0$219               main
+     00000479  A$lcc32320$968                     main
+     0000047B  A$lcc32320$969                     main
+     0000047C  A$lcc32320$973                     main
+     0000047C  C$main.c$385$1_0$219               main
+     0000047F  A$lcc32320$974                     main
+     00000481  A$lcc32320$975                     main
+     00000483  A$lcc32320$976                     main
+     00000486  A$lcc32320$977                     main
+     00000488  A$lcc32320$978                     main
+     0000048A  A$lcc32320$982                     main
+     0000048A  C$main.c$386$2_0$220               main
+     0000048D  A$lcc32320$983                     main
+     0000048F  A$lcc32320$984                     main
+     00000491  A$lcc32320$985                     main
+     00000494  A$lcc32320$986                     main
+     00000496  A$lcc32320$991                     main
+     00000496  C$main.c$387$2_0$220               main
+     00000499  A$lcc32320$996                     main
+     00000499  C$main.c$389$1_0$219               main
+     0000049C  A$lcc32320$997                     main
+     0000049E  A$lcc32320$998                     main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 14.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000004A0  A$lcc105680$1003                   main
-     000004A3  A$lcc105680$1004                   main
-     000004A5  A$lcc105680$1005                   main
-     000004A7  A$lcc105680$1006                   main
-     000004AA  A$lcc105680$1007                   main
-     000004AC  A$lcc105680$1008                   main
-     000004AE  A$lcc105680$1012                   main
-     000004AE  C$main.c$397$2_0$221               main
-     000004B1  A$lcc105680$1017                   main
-     000004B1  C$main.c$400$1_0$219               main
-     000004B3  A$lcc105680$1018                   main
-     000004B4  A$lcc105680$1019                   main
-     000004B7  A$lcc105680$1023                   main
-     000004B8  A$lcc105680$1028                   main
-     000004B8  C$main.c$402$1_0$219               main
+     000004A0  A$lcc32320$999                     main
+     000004A3  A$lcc32320$1000                    main
+     000004A5  A$lcc32320$1001                    main
+     000004A7  A$lcc32320$1002                    main
+     000004AA  A$lcc32320$1003                    main
+     000004AC  A$lcc32320$1004                    main
+     000004AE  A$lcc32320$1008                    main
+     000004AE  C$main.c$390$2_0$221               main
+     000004B1  A$lcc32320$1013                    main
+     000004B1  C$main.c$393$1_0$219               main
+     000004B3  A$lcc32320$1014                    main
+     000004B4  A$lcc32320$1015                    main
+     000004B7  A$lcc32320$1019                    main
+     000004B8  A$lcc32320$1024                    main
+     000004B8  C$main.c$395$1_0$219               main
      000004B8  XG$handle_inputs$0$0               main
-     000004B9  A$lcc105680$1038                   main
-     000004B9  C$main.c$424$1_0$246               main
+     000004B9  A$lcc32320$1034                    main
+     000004B9  C$main.c$417$1_0$246               main
      000004B9  G$handle_stopwatch$0$0             main
      000004B9  _handle_stopwatch                  main
-     000004BA  A$lcc105680$1042                   main
-     000004BA  C$main.c$426$1_0$246               main
-     000004BD  A$lcc105680$1043                   main
-     000004BF  A$lcc105680$1044                   main
-     000004C2  A$lcc105680$1046                   main
-     000004C5  A$lcc105680$1047                   main
-     000004C6  A$lcc105680$1048                   main
-     000004C7  A$lcc105680$1049                   main
-     000004CA  A$lcc105680$1050                   main
-     000004CB  A$lcc105680$1053                   main
-     000004CD  A$lcc105680$1056                   main
-     000004CE  A$lcc105680$1057                   main
-     000004D0  A$lcc105680$1058                   main
-     000004D1  A$lcc105680$1059                   main
-     000004D2  A$lcc105680$1060                   main
-     000004D3  A$lcc105680$1061                   main
-     000004D4  A$lcc105680$1062                   main
-     000004D7  A$lcc105680$1063                   main
-     000004D9  A$lcc105680$1064                   main
-     000004DA  A$lcc105680$1066                   main
-     000004DC  A$lcc105680$1067                   main
-     000004DF  A$lcc105680$1068                   main
-     000004E0  A$lcc105680$1069                   main
-     000004E2  A$lcc105680$1070                   main
-     000004E3  A$lcc105680$1071                   main
-     000004E5  A$lcc105680$1073                   main
-     000004E7  A$lcc105680$1075                   main
-     000004EA  A$lcc105680$1078                   main
-     000004ED  A$lcc105680$1079                   main
-     000004EE  A$lcc105680$1080                   main
-     000004F1  A$lcc105680$1081                   main
+     000004BA  A$lcc32320$1038                    main
+     000004BA  C$main.c$419$1_0$246               main
+     000004BD  A$lcc32320$1039                    main
+     000004BF  A$lcc32320$1040                    main
+     000004C2  A$lcc32320$1042                    main
+     000004C4  A$lcc32320$1043                    main
+     000004C7  A$lcc32320$1044                    main
+     000004C8  A$lcc32320$1045                    main
+     000004CA  A$lcc32320$1046                    main
+     000004CB  A$lcc32320$1047                    main
+     000004CD  A$lcc32320$1049                    main
+     000004CF  A$lcc32320$1051                    main
+     000004D2  A$lcc32320$1053                    main
+     000004D5  A$lcc32320$1054                    main
+     000004D8  A$lcc32320$1055                    main
+     000004D9  A$lcc32320$1056                    main
+     000004DA  A$lcc32320$1057                    main
+     000004DC  A$lcc32320$1060                    main
+     000004DD  A$lcc32320$1061                    main
+     000004DE  A$lcc32320$1062                    main
+     000004DF  A$lcc32320$1063                    main
+     000004E0  A$lcc32320$1064                    main
+     000004E1  A$lcc32320$1065                    main
+     000004E4  A$lcc32320$1066                    main
+     000004E6  A$lcc32320$1069                    main
+     000004E9  A$lcc32320$1070                    main
+     000004EA  A$lcc32320$1071                    main
+     000004ED  A$lcc32320$1072                    main
+     000004EE  A$lcc32320$1073                    main
+     000004EF  A$lcc32320$1074                    main
+     000004F0  A$lcc32320$1078                    main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 15.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000004F2  A$lcc105680$1082                   main
-     000004F3  A$lcc105680$1083                   main
-     000004F4  A$lcc105680$1087                   main
-     000004F6  A$lcc105680$1088                   main
-     000004F8  A$lcc105680$1090                   main
-     000004FA  A$lcc105680$1091                   main
-     000004FB  A$lcc105680$1092                   main
-     000004FE  A$lcc105680$1093                   main
-     000004FF  A$lcc105680$1094                   main
-     00000501  A$lcc105680$1096                   main
-     00000504  A$lcc105680$1097                   main
-     00000506  A$lcc105680$1098                   main
-     00000507  A$lcc105680$1101                   main
-     00000508  A$lcc105680$1102                   main
-     00000509  A$lcc105680$1103                   main
-     0000050A  A$lcc105680$1104                   main
-     0000050B  A$lcc105680$1105                   main
-     0000050E  A$lcc105680$1107                   main
-     00000510  A$lcc105680$1108                   main
-     00000511  A$lcc105680$1109                   main
-     00000513  A$lcc105680$1114                   main
-     00000515  A$lcc105680$1116                   main
-     00000518  A$lcc105680$1117                   main
-     0000051A  A$lcc105680$1118                   main
-     0000051B  A$lcc105680$1119                   main
-     0000051C  A$lcc105680$1120                   main
-     0000051D  A$lcc105680$1121                   main
-     0000051E  A$lcc105680$1122                   main
-     00000520  A$lcc105680$1124                   main
-     00000521  A$lcc105680$1125                   main
-     00000523  A$lcc105680$1126                   main
-     00000525  A$lcc105680$1127                   main
-     00000527  A$lcc105680$1128                   main
-     00000528  A$lcc105680$1129                   main
-     0000052A  A$lcc105680$1131                   main
-     0000052D  A$lcc105680$1132                   main
-     0000052E  A$lcc105680$1133                   main
-     00000530  A$lcc105680$1134                   main
-     00000531  A$lcc105680$1138                   main
-     00000532  A$lcc105680$1141                   main
-     00000533  A$lcc105680$1142                   main
-     00000534  A$lcc105680$1143                   main
-     00000535  A$lcc105680$1144                   main
-     00000536  A$lcc105680$1145                   main
-     00000537  A$lcc105680$1146                   main
-     0000053A  A$lcc105680$1147                   main
-     0000053B  A$lcc105680$1150                   main
-     0000053C  A$lcc105680$1151                   main
-     0000053E  A$lcc105680$1155                   main
-     00000541  A$lcc105680$1156                   main
-     00000542  A$lcc105680$1157                   main
+     000004F2  A$lcc32320$1079                    main
+     000004F4  A$lcc32320$1081                    main
+     000004F6  A$lcc32320$1082                    main
+     000004F7  A$lcc32320$1083                    main
+     000004FA  A$lcc32320$1084                    main
+     000004FB  A$lcc32320$1085                    main
+     000004FD  A$lcc32320$1087                    main
+     00000500  A$lcc32320$1088                    main
+     00000502  A$lcc32320$1089                    main
+     00000503  A$lcc32320$1092                    main
+     00000504  A$lcc32320$1093                    main
+     00000505  A$lcc32320$1094                    main
+     00000506  A$lcc32320$1095                    main
+     00000507  A$lcc32320$1096                    main
+     0000050A  A$lcc32320$1098                    main
+     0000050C  A$lcc32320$1099                    main
+     0000050D  A$lcc32320$1100                    main
+     0000050F  A$lcc32320$1105                    main
+     00000511  A$lcc32320$1107                    main
+     00000514  A$lcc32320$1108                    main
+     00000516  A$lcc32320$1109                    main
+     00000517  A$lcc32320$1110                    main
+     00000518  A$lcc32320$1111                    main
+     00000519  A$lcc32320$1112                    main
+     0000051A  A$lcc32320$1113                    main
+     0000051C  A$lcc32320$1115                    main
+     0000051D  A$lcc32320$1116                    main
+     0000051F  A$lcc32320$1117                    main
+     00000521  A$lcc32320$1118                    main
+     00000523  A$lcc32320$1119                    main
+     00000524  A$lcc32320$1120                    main
+     00000526  A$lcc32320$1122                    main
+     00000529  A$lcc32320$1123                    main
+     0000052A  A$lcc32320$1124                    main
+     0000052C  A$lcc32320$1125                    main
+     0000052D  A$lcc32320$1129                    main
+     0000052E  A$lcc32320$1132                    main
+     0000052F  A$lcc32320$1133                    main
+     00000530  A$lcc32320$1134                    main
+     00000531  A$lcc32320$1135                    main
+     00000532  A$lcc32320$1136                    main
+     00000533  A$lcc32320$1137                    main
+     00000536  A$lcc32320$1138                    main
+     00000537  A$lcc32320$1141                    main
+     00000538  A$lcc32320$1142                    main
+     0000053A  A$lcc32320$1146                    main
+     0000053C  A$lcc32320$1147                    main
+     0000053F  A$lcc32320$1148                    main
+     00000540  A$lcc32320$1149                    main
+     00000542  A$lcc32320$1150                    main
+     00000543  A$lcc32320$1151                    main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 16.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000543  A$lcc105680$1158                   main
-     00000545  A$lcc105680$1161                   main
-     00000546  A$lcc105680$1162                   main
-     00000547  A$lcc105680$1163                   main
-     0000054A  A$lcc105680$1164                   main
-     0000054B  A$lcc105680$1165                   main
-     0000054C  A$lcc105680$1166                   main
-     0000054D  A$lcc105680$1167                   main
-     00000550  A$lcc105680$1168                   main
-     00000552  A$lcc105680$1170                   main
-     00000554  A$lcc105680$1171                   main
-     00000557  A$lcc105680$1172                   main
-     00000558  A$lcc105680$1173                   main
-     0000055A  A$lcc105680$1174                   main
-     0000055B  A$lcc105680$1175                   main
-     0000055D  A$lcc105680$1177                   main
-     0000055F  A$lcc105680$1179                   main
-     00000562  A$lcc105680$1182                   main
-     00000565  A$lcc105680$1183                   main
-     00000566  A$lcc105680$1184                   main
-     00000569  A$lcc105680$1185                   main
-     0000056A  A$lcc105680$1189                   main
-     0000056C  A$lcc105680$1191                   main
-     0000056D  A$lcc105680$1192                   main
-     00000570  A$lcc105680$1193                   main
-     00000571  A$lcc105680$1194                   main
-     00000573  A$lcc105680$1196                   main
-     00000576  A$lcc105680$1197                   main
-     00000578  A$lcc105680$1198                   main
-     00000579  A$lcc105680$1201                   main
-     0000057A  A$lcc105680$1202                   main
-     0000057B  A$lcc105680$1205                   main
-     0000057C  A$lcc105680$1206                   main
-     0000057D  A$lcc105680$1207                   main
-     0000057E  A$lcc105680$1208                   main
-     0000057F  A$lcc105680$1209                   main
-     00000580  A$lcc105680$1210                   main
-     00000583  A$lcc105680$1211                   main
-     00000584  A$lcc105680$1213                   main
-     00000585  A$lcc105680$1214                   main
-     00000587  A$lcc105680$1219                   main
-     00000589  A$lcc105680$1221                   main
-     0000058C  A$lcc105680$1222                   main
-     0000058E  A$lcc105680$1223                   main
-     0000058F  A$lcc105680$1224                   main
-     00000590  A$lcc105680$1225                   main
-     00000591  A$lcc105680$1226                   main
-     00000592  A$lcc105680$1227                   main
-     00000594  A$lcc105680$1229                   main
-     00000595  A$lcc105680$1230                   main
-     00000597  A$lcc105680$1231                   main
+     00000545  A$lcc32320$1153                    main
+     00000547  A$lcc32320$1155                    main
+     0000054A  A$lcc32320$1157                    main
+     0000054D  A$lcc32320$1158                    main
+     0000054E  A$lcc32320$1159                    main
+     0000054F  A$lcc32320$1160                    main
+     00000551  A$lcc32320$1163                    main
+     00000552  A$lcc32320$1164                    main
+     00000553  A$lcc32320$1165                    main
+     00000556  A$lcc32320$1166                    main
+     00000557  A$lcc32320$1167                    main
+     00000558  A$lcc32320$1168                    main
+     00000559  A$lcc32320$1169                    main
+     0000055C  A$lcc32320$1170                    main
+     0000055E  A$lcc32320$1173                    main
+     00000561  A$lcc32320$1174                    main
+     00000562  A$lcc32320$1175                    main
+     00000565  A$lcc32320$1176                    main
+     00000566  A$lcc32320$1180                    main
+     00000568  A$lcc32320$1182                    main
+     00000569  A$lcc32320$1183                    main
+     0000056C  A$lcc32320$1184                    main
+     0000056D  A$lcc32320$1185                    main
+     0000056F  A$lcc32320$1187                    main
+     00000572  A$lcc32320$1188                    main
+     00000574  A$lcc32320$1189                    main
+     00000575  A$lcc32320$1192                    main
+     00000576  A$lcc32320$1193                    main
+     00000577  A$lcc32320$1196                    main
+     00000578  A$lcc32320$1197                    main
+     00000579  A$lcc32320$1198                    main
+     0000057A  A$lcc32320$1199                    main
+     0000057B  A$lcc32320$1200                    main
+     0000057C  A$lcc32320$1201                    main
+     0000057F  A$lcc32320$1202                    main
+     00000580  A$lcc32320$1204                    main
+     00000581  A$lcc32320$1205                    main
+     00000583  A$lcc32320$1210                    main
+     00000585  A$lcc32320$1212                    main
+     00000588  A$lcc32320$1213                    main
+     0000058A  A$lcc32320$1214                    main
+     0000058B  A$lcc32320$1215                    main
+     0000058C  A$lcc32320$1216                    main
+     0000058D  A$lcc32320$1217                    main
+     0000058E  A$lcc32320$1218                    main
+     00000590  A$lcc32320$1220                    main
+     00000591  A$lcc32320$1221                    main
+     00000593  A$lcc32320$1222                    main
+     00000595  A$lcc32320$1223                    main
+     00000597  A$lcc32320$1224                    main
+     00000598  A$lcc32320$1225                    main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 17.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000599  A$lcc105680$1232                   main
-     0000059B  A$lcc105680$1233                   main
-     0000059C  A$lcc105680$1234                   main
-     0000059E  A$lcc105680$1236                   main
-     000005A1  A$lcc105680$1237                   main
-     000005A2  A$lcc105680$1238                   main
-     000005A4  A$lcc105680$1239                   main
-     000005A5  A$lcc105680$1243                   main
-     000005A6  A$lcc105680$1244                   main
-     000005A7  A$lcc105680$1247                   main
-     000005A8  A$lcc105680$1248                   main
-     000005A9  A$lcc105680$1249                   main
-     000005AA  A$lcc105680$1250                   main
-     000005AB  A$lcc105680$1251                   main
-     000005AC  A$lcc105680$1252                   main
-     000005AF  A$lcc105680$1253                   main
-     000005B0  A$lcc105680$1256                   main
-     000005B1  A$lcc105680$1257                   main
-     000005B3  A$lcc105680$1261                   main
-     000005B6  A$lcc105680$1262                   main
-     000005B9  A$lcc105680$1263                   main
-     000005BA  A$lcc105680$1264                   main
-     000005BB  A$lcc105680$1265                   main
-     000005BD  A$lcc105680$1268                   main
-     000005BE  A$lcc105680$1269                   main
-     000005BF  A$lcc105680$1270                   main
-     000005C0  A$lcc105680$1271                   main
-     000005C1  A$lcc105680$1272                   main
-     000005C2  A$lcc105680$1273                   main
-     000005C5  A$lcc105680$1274                   main
-     000005C7  A$lcc105680$1276                   main
-     000005C9  A$lcc105680$1277                   main
-     000005CC  A$lcc105680$1278                   main
-     000005CD  A$lcc105680$1279                   main
-     000005CF  A$lcc105680$1280                   main
-     000005D0  A$lcc105680$1281                   main
-     000005D2  A$lcc105680$1283                   main
-     000005D4  A$lcc105680$1285                   main
-     000005D7  A$lcc105680$1288                   main
-     000005DA  A$lcc105680$1289                   main
-     000005DB  A$lcc105680$1290                   main
-     000005DE  A$lcc105680$1291                   main
-     000005DF  A$lcc105680$1295                   main
-     000005DF  C$main.c$318$1_0$246               main
-     000005E1  A$lcc105680$1297                   main
-     000005E2  A$lcc105680$1298                   main
-     000005E5  A$lcc105680$1299                   main
-     000005E6  A$lcc105680$1300                   main
-     000005E8  A$lcc105680$1302                   main
-     000005EB  A$lcc105680$1303                   main
-     000005ED  A$lcc105680$1304                   main
+     0000059A  A$lcc32320$1227                    main
+     0000059D  A$lcc32320$1228                    main
+     0000059E  A$lcc32320$1229                    main
+     000005A0  A$lcc32320$1230                    main
+     000005A1  A$lcc32320$1234                    main
+     000005A2  A$lcc32320$1235                    main
+     000005A3  A$lcc32320$1238                    main
+     000005A4  A$lcc32320$1239                    main
+     000005A5  A$lcc32320$1240                    main
+     000005A6  A$lcc32320$1241                    main
+     000005A7  A$lcc32320$1242                    main
+     000005A8  A$lcc32320$1243                    main
+     000005AB  A$lcc32320$1244                    main
+     000005AC  A$lcc32320$1247                    main
+     000005AD  A$lcc32320$1248                    main
+     000005AF  A$lcc32320$1252                    main
+     000005B1  A$lcc32320$1253                    main
+     000005B4  A$lcc32320$1254                    main
+     000005B5  A$lcc32320$1255                    main
+     000005B7  A$lcc32320$1256                    main
+     000005B8  A$lcc32320$1257                    main
+     000005BA  A$lcc32320$1259                    main
+     000005BC  A$lcc32320$1261                    main
+     000005BF  A$lcc32320$1263                    main
+     000005C2  A$lcc32320$1264                    main
+     000005C5  A$lcc32320$1265                    main
+     000005C6  A$lcc32320$1266                    main
+     000005C8  A$lcc32320$1267                    main
+     000005CA  A$lcc32320$1268                    main
+     000005CB  A$lcc32320$1269                    main
+     000005CC  A$lcc32320$1270                    main
+     000005CD  A$lcc32320$1271                    main
+     000005CE  A$lcc32320$1272                    main
+     000005D1  A$lcc32320$1273                    main
+     000005D3  A$lcc32320$1276                    main
+     000005D6  A$lcc32320$1277                    main
+     000005D7  A$lcc32320$1278                    main
+     000005DA  A$lcc32320$1279                    main
+     000005DB  A$lcc32320$1283                    main
+     000005DB  C$main.c$311$1_0$246               main
+     000005DD  A$lcc32320$1285                    main
+     000005DE  A$lcc32320$1286                    main
+     000005E1  A$lcc32320$1287                    main
+     000005E2  A$lcc32320$1288                    main
+     000005E4  A$lcc32320$1290                    main
+     000005E7  A$lcc32320$1291                    main
+     000005E9  A$lcc32320$1292                    main
+     000005EA  A$lcc32320$1295                    main
+     000005EB  A$lcc32320$1296                    main
+     000005EC  A$lcc32320$1299                    main
+     000005ED  A$lcc32320$1300                    main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 18.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000005EE  A$lcc105680$1307                   main
-     000005EF  A$lcc105680$1308                   main
-     000005F0  A$lcc105680$1311                   main
-     000005F1  A$lcc105680$1312                   main
-     000005F2  A$lcc105680$1313                   main
-     000005F3  A$lcc105680$1314                   main
-     000005F4  A$lcc105680$1315                   main
-     000005F5  A$lcc105680$1316                   main
-     000005F8  A$lcc105680$1317                   main
-     000005F9  A$lcc105680$1319                   main
-     000005FA  A$lcc105680$1320                   main
-     000005FC  A$lcc105680$1325                   main
-     000005FC  C$main.c$322$1_0$246               main
-     000005FE  A$lcc105680$1327                   main
-     00000601  A$lcc105680$1328                   main
-     00000603  A$lcc105680$1329                   main
-     00000604  A$lcc105680$1330                   main
-     00000605  A$lcc105680$1331                   main
-     00000606  A$lcc105680$1332                   main
-     00000607  A$lcc105680$1333                   main
-     00000609  A$lcc105680$1335                   main
-     0000060A  A$lcc105680$1336                   main
-     0000060C  A$lcc105680$1337                   main
-     0000060E  A$lcc105680$1338                   main
-     00000610  A$lcc105680$1339                   main
-     00000611  A$lcc105680$1340                   main
-     00000613  A$lcc105680$1342                   main
-     00000616  A$lcc105680$1343                   main
-     00000617  A$lcc105680$1344                   main
-     00000619  A$lcc105680$1345                   main
-     0000061A  A$lcc105680$1349                   main
-     0000061B  A$lcc105680$1350                   main
-     0000061C  A$lcc105680$1353                   main
-     0000061D  A$lcc105680$1354                   main
-     0000061E  A$lcc105680$1355                   main
-     0000061F  A$lcc105680$1356                   main
-     00000620  A$lcc105680$1357                   main
-     00000621  A$lcc105680$1358                   main
-     00000624  A$lcc105680$1359                   main
-     00000625  A$lcc105680$1362                   main
-     00000626  A$lcc105680$1363                   main
-     00000628  A$lcc105680$1367                   main
-     00000629  A$lcc105680$1368                   main
-     0000062A  A$lcc105680$1369                   main
-     0000062B  A$lcc105680$1370                   main
-     0000062D  A$lcc105680$1371                   main
-     0000062F  A$lcc105680$1372                   main
-     00000632  A$lcc105680$1376                   main
-     00000632  C$main.c$429$2_0$247               main
-     00000635  A$lcc105680$1377                   main
-     00000637  A$lcc105680$1378                   main
+     000005EE  A$lcc32320$1301                    main
+     000005EF  A$lcc32320$1302                    main
+     000005F0  A$lcc32320$1303                    main
+     000005F1  A$lcc32320$1304                    main
+     000005F4  A$lcc32320$1305                    main
+     000005F5  A$lcc32320$1307                    main
+     000005F6  A$lcc32320$1308                    main
+     000005F8  A$lcc32320$1313                    main
+     000005F8  C$main.c$315$1_0$246               main
+     000005FA  A$lcc32320$1315                    main
+     000005FD  A$lcc32320$1316                    main
+     000005FF  A$lcc32320$1317                    main
+     00000600  A$lcc32320$1318                    main
+     00000601  A$lcc32320$1319                    main
+     00000602  A$lcc32320$1320                    main
+     00000603  A$lcc32320$1321                    main
+     00000605  A$lcc32320$1323                    main
+     00000606  A$lcc32320$1324                    main
+     00000608  A$lcc32320$1325                    main
+     0000060A  A$lcc32320$1326                    main
+     0000060C  A$lcc32320$1327                    main
+     0000060D  A$lcc32320$1328                    main
+     0000060F  A$lcc32320$1330                    main
+     00000612  A$lcc32320$1331                    main
+     00000613  A$lcc32320$1332                    main
+     00000615  A$lcc32320$1333                    main
+     00000616  A$lcc32320$1337                    main
+     00000617  A$lcc32320$1338                    main
+     00000618  A$lcc32320$1341                    main
+     00000619  A$lcc32320$1342                    main
+     0000061A  A$lcc32320$1343                    main
+     0000061B  A$lcc32320$1344                    main
+     0000061C  A$lcc32320$1345                    main
+     0000061D  A$lcc32320$1346                    main
+     00000620  A$lcc32320$1347                    main
+     00000621  A$lcc32320$1350                    main
+     00000622  A$lcc32320$1351                    main
+     00000624  A$lcc32320$1355                    main
+     00000625  A$lcc32320$1356                    main
+     00000626  A$lcc32320$1357                    main
+     00000627  A$lcc32320$1358                    main
+     00000629  A$lcc32320$1359                    main
+     0000062B  A$lcc32320$1360                    main
+     0000062E  A$lcc32320$1364                    main
+     0000062E  C$main.c$422$2_0$247               main
+     00000631  A$lcc32320$1365                    main
+     00000633  A$lcc32320$1366                    main
+     00000635  A$lcc32320$1370                    main
+     00000635  C$main.c$423$3_0$248               main
+     00000637  A$lcc32320$1371                    main
+     00000639  A$lcc32320$1375                    main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 19.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000639  A$lcc105680$1382                   main
-     00000639  C$main.c$430$3_0$248               main
-     0000063B  A$lcc105680$1383                   main
-     0000063D  A$lcc105680$1387                   main
-     0000063D  C$main.c$431$3_0$248               main
-     00000640  A$lcc105680$1391                   main
-     00000640  C$main.c$432$3_0$248               main
-     00000643  A$lcc105680$1392                   main
-     00000645  A$lcc105680$1397                   main
-     00000646  A$lcc105680$1402                   main
-     00000646  C$main.c$436$1_0$246               main
-     00000646  XG$handle_stopwatch$0$0            main
-     00000647  A$lcc105680$1415                   main
-     00000647  C$main.c$442$1_0$274               main
-     00000647  C$main.c$444$1_0$274               main
-     00000647  G$init_game$0$0                    main
-     00000647  _init_game                         main
-     0000064A  A$lcc105680$1419                   main
-     0000064A  C$main.c$445$1_0$274               main
-     0000064D  A$lcc105680$1420                   main
-     0000064E  A$lcc105680$1421                   main
-     00000651  A$lcc105680$1422                   main
-     00000652  A$lcc105680$1423                   main
-     00000655  A$lcc105680$1424                   main
-     00000656  A$lcc105680$1425                   main
-     00000657  A$lcc105680$1426                   main
-     00000658  A$lcc105680$1430                   main
-     00000658  C$main.c$447$1_0$274               main
-     0000065B  A$lcc105680$1434                   main
-     0000065B  C$main.c$448$1_0$274               main
-     0000065E  A$lcc105680$1445                   main
-     0000065E  C$main.c$450$1_0$274               main
-     0000065E  C$main.c$452$1_0$274               main
-     0000065E  XG$init_game$0$0                   main
-     00000661  A$lcc105680$1458                   main
-     00000661  C$main.c$458$1_0$276               main
-     00000661  C$main.c$460$1_0$276               main
-     00000661  G$main$0$0                         main
-     00000661  _main                              main
-     00000664  A$lcc105680$1462                   main
-     00000664  C$main.c$461$1_0$276               main
-     00000667  A$lcc105680$1470                   main
-     00000667  C$main.c$463$1_0$276               main
-     00000667  C$main.c$464$2_0$277               main
-     0000066A  A$lcc105680$1474                   main
-     0000066A  C$main.c$465$2_0$277               main
-     0000066D  A$lcc105680$1478                   main
-     0000066D  C$main.c$466$2_0$277               main
-     00000670  A$lcc105680$1486                   main
-     00000670  C$main.c$469$1_0$276               main
-     00000670  XG$main$0$0                        main
+     00000639  C$main.c$424$3_0$248               main
+     0000063C  A$lcc32320$1379                    main
+     0000063C  C$main.c$425$3_0$248               main
+     0000063F  A$lcc32320$1380                    main
+     00000641  A$lcc32320$1385                    main
+     00000642  A$lcc32320$1390                    main
+     00000642  C$main.c$429$1_0$246               main
+     00000642  XG$handle_stopwatch$0$0            main
+     00000643  A$lcc32320$1403                    main
+     00000643  C$main.c$435$1_0$274               main
+     00000643  C$main.c$437$1_0$274               main
+     00000643  G$init_game$0$0                    main
+     00000643  _init_game                         main
+     00000646  A$lcc32320$1407                    main
+     00000646  C$main.c$438$1_0$274               main
+     00000649  A$lcc32320$1408                    main
+     0000064A  A$lcc32320$1409                    main
+     0000064D  A$lcc32320$1410                    main
+     0000064E  A$lcc32320$1411                    main
+     00000651  A$lcc32320$1412                    main
+     00000652  A$lcc32320$1413                    main
+     00000653  A$lcc32320$1414                    main
+     00000654  A$lcc32320$1418                    main
+     00000654  C$main.c$440$1_0$274               main
+     00000657  A$lcc32320$1422                    main
+     00000657  C$main.c$441$1_0$274               main
+     0000065A  A$lcc32320$1433                    main
+     0000065A  C$main.c$443$1_0$274               main
+     0000065A  C$main.c$445$1_0$274               main
+     0000065A  XG$init_game$0$0                   main
+     0000065D  A$lcc32320$1446                    main
+     0000065D  C$main.c$451$1_0$276               main
+     0000065D  C$main.c$453$1_0$276               main
+     0000065D  G$main$0$0                         main
+     0000065D  _main                              main
+     00000660  A$lcc32320$1450                    main
+     00000660  C$main.c$454$1_0$276               main
+     00000663  A$lcc32320$1458                    main
+     00000663  C$main.c$456$1_0$276               main
+     00000663  C$main.c$457$2_0$277               main
+     00000666  A$lcc32320$1462                    main
+     00000666  C$main.c$458$2_0$277               main
+     00000669  A$lcc32320$1466                    main
+     00000669  C$main.c$459$2_0$277               main
+     0000066C  A$lcc32320$1474                    main
+     0000066C  C$main.c$462$1_0$276               main
+     0000066C  XG$main$0$0                        main
+     0000066E  _set_vram_byte                     
+     00000677  _set_win_tile_xy                   
+     00000680  _set_bkg_tile_xy                   
+     000006AF  _printf                            printf
 ASxxxx Linker V03.00/V05.40 + sdld,  page 20.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00000918 =        2328. bytes (REL,CON)
+_CODE                               00000200    00000914 =        2324. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000672  _set_vram_byte                     
-     0000067B  _set_win_tile_xy                   
-     00000684  _set_bkg_tile_xy                   
-     000006B3  _printf                            printf
-     000006C8  _cpu_slow                          CGB
-     000006E3  _cpu_fast                          CGB
-     000006EA  _get_win_xy_addr                   
-     000006F2  _get_bkg_xy_addr                   
-     00000711  _cgb_compatibility                 CGB
-     00000711  _set_default_palette               CGB
-     0000072A  _set_sprite_palette                CGB
-     0000072F  _set_bkg_palette                   CGB
-     00000732  .set_palette                       CGB
-     00000751  _set_sprite_palette_entry          CGB
-     00000756  _set_bkg_palette_entry             CGB
-     00000759  .set_palette_entry                 CGB
-     000007AC  ___printf                          sprintf
-     00000AF7  _sprintf                           sprintf
+     000006C4  _cpu_slow                          CGB
+     000006DF  _cpu_fast                          CGB
+     000006E6  _get_win_xy_addr                   
+     000006EE  _get_bkg_xy_addr                   
+     0000070D  _cgb_compatibility                 CGB
+     0000070D  _set_default_palette               CGB
+     00000726  _set_sprite_palette                CGB
+     0000072B  _set_bkg_palette                   CGB
+     0000072E  .set_palette                       CGB
+     0000074D  _set_sprite_palette_entry          CGB
+     00000752  _set_bkg_palette_entry             CGB
+     00000755  .set_palette_entry                 CGB
+     000007A8  ___printf                          sprintf
+     00000AF3  _sprintf                           sprintf
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 21.
 Hexadecimal  [32-Bits]
@@ -1319,88 +1315,88 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_HOME                               00000B18    00000C1E =        3102. bytes (REL,CON)
+_HOME                               00000B14    00000C1E =        3102. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000B18  .memset_simple                     Runtime
-     00000B21  .memcpy_simple                     Runtime
-     00000B3E  .display_off                       Runtime
-     00000B3E  _display_off                       Runtime
-     00000B56  _uitoa                             itoa
-     00000B65  _itoa                              itoa
-     00000B74  .itoa                              itoa
-     00000B88  .utoa                              itoa
-     00000BFC  _font_load_ibm                     font.ms
-     00000C03  font_load                          font.ms
-     00000C4B  font_copy_current                  font.ms
-     00000C81  font_set                           font.ms
-     00000C8E  .put_char                          font.ms
-     00000CA6  .out_char                          font.ms
-     00000CAC  .del_char                          font.ms
-     00000D02  _putchar                           font.ms
-     00000D0B  _setchar                           font.ms
-     00000D14  _font_load                         font.ms
-     00000D22  _font_set                          font.ms
-     00000D31  _font_init                         font.ms
-     00000D50  .cls                               font.ms
-     00000D50  _cls                               font.ms
-     00000D72  _gotoxy                            font.ms
-     00000D7D  _posx                              font.ms
-     00000D8E  _posy                              font.ms
-     00000DB6  .cr_curs                           font.ms
-     00000DCB  .adv_curs                          font.ms
-     00000E27  .tmode                             font.ms
-     00000E44  .tmode_out                         font.ms
-     00000E4D  _add_TIM                           
-     00000E50  _font_spect                        font_spect
-     000011D2  _set_tile_data                     
-     000011D7  _set_bkg_data                      
-     000011D7  _set_win_data                      
-     000011DF  _set_sprite_data                   
-     0000120F  .add_TIM                           
-     00001215  .remove_TIM                        
-     00001215  _remove_TIM                        
-     0000121B  _init_win                          
-     00001224  _init_bkg                          
-     0000122D  _vmemset                           
-     0000123E  .padup                             
-     0000123E  _waitpadup                         
-     0000124E  .jpad                              
-     0000124E  _joypad                            
-     00001276  _waitpad                           
-     00001277  .wait_pad                          
-     0000127E  _color                             
-     0000127E  _set_1bpp_colors_ex                
-     0000128D  .drawing_lcd                       
+     00000B14  .memset_simple                     Runtime
+     00000B1D  .memcpy_simple                     Runtime
+     00000B3A  .display_off                       Runtime
+     00000B3A  _display_off                       Runtime
+     00000B52  _uitoa                             itoa
+     00000B61  _itoa                              itoa
+     00000B70  .itoa                              itoa
+     00000B84  .utoa                              itoa
+     00000BF8  _font_load_ibm                     font.ms
+     00000BFF  font_load                          font.ms
+     00000C47  font_copy_current                  font.ms
+     00000C7D  font_set                           font.ms
+     00000C8A  .put_char                          font.ms
+     00000CA2  .out_char                          font.ms
+     00000CA8  .del_char                          font.ms
+     00000CFE  _putchar                           font.ms
+     00000D07  _setchar                           font.ms
+     00000D10  _font_load                         font.ms
+     00000D1E  _font_set                          font.ms
+     00000D2D  _font_init                         font.ms
+     00000D4C  .cls                               font.ms
+     00000D4C  _cls                               font.ms
+     00000D6E  _gotoxy                            font.ms
+     00000D79  _posx                              font.ms
+     00000D8A  _posy                              font.ms
+     00000DB2  .cr_curs                           font.ms
+     00000DC7  .adv_curs                          font.ms
+     00000E23  .tmode                             font.ms
+     00000E40  .tmode_out                         font.ms
+     00000E49  _add_TIM                           
+     00000E4C  _font_spect                        font_spect
+     000011CE  _set_tile_data                     
+     000011D3  _set_bkg_data                      
+     000011D3  _set_win_data                      
+     000011DB  _set_sprite_data                   
+     0000120B  .add_TIM                           
+     00001211  .remove_TIM                        
+     00001211  _remove_TIM                        
+     00001217  _init_win                          
+     00001220  _init_bkg                          
+     00001229  _vmemset                           
+     0000123A  .padup                             
+     0000123A  _waitpadup                         
+     0000124A  .jpad                              
+     0000124A  _joypad                            
+     00001272  _waitpad                           
+     00001273  .wait_pad                          
+     0000127A  _color                             
+     0000127A  _set_1bpp_colors_ex                
+     00001289  .drawing_lcd                       
 ASxxxx Linker V03.00/V05.40 + sdld,  page 40.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_HOME                               00000B18    00000C1E =        3102. bytes (REL,CON)
+_HOME                               00000B14    00000C1E =        3102. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000012AA  _font_ibm                          
-     0000168B  .add_LCD                           
-     0000168B  _add_LCD                           
-     00001691  .remove_LCD                        
-     00001691  _remove_LCD                        
-     00001697  .init_wtt                          
-     0000169F  .init_btt                          
-     000016AD  .init_tt                           
-     000016B0  .init_vram                         
-     000016D5  _set_bkg_1bpp_data                 
-     000016D5  _set_win_1bpp_data                 
-     000016DD  _set_sprite_1bpp_data              
-     00001735  ___sdcc_call_hl                    call_hl
+     000012A6  _font_ibm                          
+     00001687  .add_LCD                           
+     00001687  _add_LCD                           
+     0000168D  .remove_LCD                        
+     0000168D  _remove_LCD                        
+     00001693  .init_wtt                          
+     0000169B  .init_btt                          
+     000016A9  .init_tt                           
+     000016AC  .init_vram                         
+     000016D1  _set_bkg_1bpp_data                 
+     000016D1  _set_win_1bpp_data                 
+     000016D9  _set_sprite_1bpp_data              
+     00001731  ___sdcc_call_hl                    call_hl
 ASxxxx Linker V03.00/V05.40 + sdld,  page 41.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001736    00000005 =           5. bytes (REL,CON)
+_INITIALIZER                        00001732    00000005 =           5. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1409,21 +1405,21 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             0000173B    00000011 =          17. bytes (REL,CON)
+_GSINIT                             00001737    00000011 =          17. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000173B  gsinit                             Runtime
-     00001747  A$lcc105680$133                    main
-     00001747  C$main.c$389$1_0$219               main
-     0000174A  A$lcc105680$134                    main
+     00001737  gsinit                             Runtime
+     00001743  A$lcc32320$129                     main
+     00001743  C$main.c$382$1_0$219               main
+     00001746  A$lcc32320$130                     main
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 43.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            0000174C    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00001748    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1432,7 +1428,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C0A0    0000005D =          93. bytes (REL,CON)
+_DATA                               0000C0A0    00000057 =          87. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1450,48 +1446,46 @@ _DATA                               0000C0A0    0000005D =          93. bytes (R
      0000C0B3  _font                              main
      0000C0B5  G$text_LUT_ascii_base_idx$0_0$0    main
      0000C0B5  _text_LUT_ascii_base_idx           main
-     0000C0B6  G$num_buffer$0_0$0                 main
-     0000C0B6  _num_buffer                        main
-     0000C0BC  G$num_zeros$0_0$0                  main
-     0000C0BC  _num_zeros                         main
-     0000C0BD  G$stopwatch$0_0$0                  main
-     0000C0BD  _stopwatch                         main
-     0000C0BE  G$play_tick_sfx$0_0$0              main
-     0000C0BE  _play_tick_sfx                     main
-     0000C0BF  G$minutes$0_0$0                    main
-     0000C0BF  _minutes                           main
-     0000C0C0  G$seconds$0_0$0                    main
-     0000C0C0  _seconds                           main
-     0000C0C1  G$hundredths$0_0$0                 main
-     0000C0C1  _hundredths                        main
-     0000C0C2  G$num_buffer_minutes$0_0$0         main
-     0000C0C2  _num_buffer_minutes                main
-     0000C0C8  G$num_buffer_seconds$0_0$0         main
-     0000C0C8  _num_buffer_seconds                main
-     0000C0CE  G$num_buffer_hundredths$0_0$0      main
-     0000C0CE  _num_buffer_hundredths             main
-     0000C0D4  Lmain.handle_inputs$prev_joypad$   main
-     0000C0D5  font_current                       font.ms
-     0000C0D8  font_first_free_tile               font.ms
-     0000C0D9  font_table                         font.ms
-     0000C0EB  .int_0x50                          
-     0000C0F5  .int_0x48                          
+     0000C0B6  G$num_zeros$0_0$0                  main
+     0000C0B6  _num_zeros                         main
+     0000C0B7  G$stopwatch$0_0$0                  main
+     0000C0B7  _stopwatch                         main
+     0000C0B8  G$play_tick_sfx$0_0$0              main
+     0000C0B8  _play_tick_sfx                     main
+     0000C0B9  G$minutes$0_0$0                    main
+     0000C0B9  _minutes                           main
+     0000C0BA  G$seconds$0_0$0                    main
+     0000C0BA  _seconds                           main
+     0000C0BB  G$hundredths$0_0$0                 main
+     0000C0BB  _hundredths                        main
+     0000C0BC  G$num_buffer_minutes$0_0$0         main
+     0000C0BC  _num_buffer_minutes                main
+     0000C0C2  G$num_buffer_seconds$0_0$0         main
+     0000C0C2  _num_buffer_seconds                main
+     0000C0C8  G$num_buffer_hundredths$0_0$0      main
+     0000C0C8  _num_buffer_hundredths             main
+     0000C0CE  Lmain.handle_inputs$prev_joypad$   main
+     0000C0CF  font_current                       font.ms
+     0000C0D2  font_first_free_tile               font.ms
+     0000C0D3  font_table                         font.ms
+     0000C0E5  .int_0x50                          
+     0000C0EF  .int_0x48                          
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C0FD    00000005 =           5. bytes (REL,CON)
+_INITIALIZED                        0000C0F7    00000005 =           5. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C0FD  .curx                              font.ms
-     0000C0FE  .cury                              font.ms
-     0000C0FF  .fg_colour                         
-     0000C0FF  __current_1bpp_colors              
-     0000C100  .bg_colour                         
-     0000C101  .draw_mode                         
+     0000C0F7  .curx                              font.ms
+     0000C0F8  .cury                              font.ms
+     0000C0F9  .fg_colour                         
+     0000C0F9  __current_1bpp_colors              
+     0000C0FA  .bg_colour                         
+     0000C0FB  .draw_mode                         
 ASxxxx Linker V03.00/V05.40 + sdld,  page 46.
 Hexadecimal  [32-Bits]
 
@@ -1537,7 +1531,7 @@ Files Linked                              [ module(s) ]
 
 C:\Users\Spenser\Home\dev\tools\gbdk\lib/gb/crt0.o
                                           [ Runtime ]
-C:\Users\Spenser\AppData\Local\Temp/lcc105680.o
+C:\Users\Spenser\AppData\Local\Temp/lcc32320.o
                                           [ main ]
 
 

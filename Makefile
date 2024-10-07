@@ -1,16 +1,7 @@
-# ============================================================  run  =============================
-
-# $ make					[linux/mac]
-# $ mingw32-make			[windows]
-
 # ============================================================  basic command  ====================
 
 # lcc -o helloworld.gb main.c
 # compiler | output | filename | source
-
-
-
-
 
 # ============================================================  set up  ===========================
 
@@ -65,7 +56,7 @@ reset:
 compile:	$(BIN)
 
 $(BIN):
-	@$(LCC) $(LCCFLAGS) $(CFLAGS) -o $(BIN) $(CSOURCES) $(OBJS) || ($(ERROR_LOG); false)
+	@$(LCC) $(LCCFLAGS) $(CFLAGS) -o $(BIN) $(CSOURCES) || ($(ERROR_LOG); false)
 
 # ============================================================  log success  ======================
 success:
