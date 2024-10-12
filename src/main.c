@@ -38,6 +38,28 @@
 	0x07			1		1		1		CPU Clock / 256		~16 kHz				16,384					~273.07
 	_____________________________________________________________________________________
 
+-------------------------------------------------------------------------------
+
+	Tested on:
+		- DMG Unmodded 
+		- DMG IPS modded
+		- GBC IPS modded
+		- GBC cpu on a DMG board
+		- GBC smashed into a GBP
+		- Emulicious DMG/GBC
+		- BGB DMG/GBC (***** bit slow? *****)
+
+	Not Tested:
+		- GBP
+		- GBC unmoded
+		- GBA (I just realized I dont have any GBAs)
+		- SGB
+		- SGB 2
+		- the GameCube one
+		- Analgue Pocket
+		- the new GBC FPGA board (which I have, but havent built)
+		- Sameboy Retroarch DMG/GBC
+
 ---------------------------------------------------------------------------~ */
 
 //* ------------------------------------------------------------------------------------------- *//
@@ -327,6 +349,7 @@ void reset_stopwatch(void) {
 
 	sfx_4();
 
+	TIMA_REG = 0; // reset TIMA_REG
 	stopwatch = FALSE; // saftey, should already be false
 
 	minutes = 0;
@@ -433,6 +456,7 @@ void init_game(void) {
 
 	set_timer_reg_stopwatch(); // set counter and modulo registers
 	set_timer_isr_stopwatch(); // set isr
+	TIMA_REG = 0; // reset TIMA_REG
 
 	init_scene(); // header and controls text
 
